@@ -15,12 +15,34 @@ import reactjs from "./tech/reactjs.png";
 import tailwind from "./tech/tailwind.png";
 import mysql from "./tech/mysql.jpg";
 import postgresql from "./tech/postgresql.png";
+import firebase from "./tech/firebase.png"
+import jenkins from "./tech/jenkins.jpg"
+import kafka from "./tech/kafka.png"
+import kubernetes from "./tech/kubernetes.png"
+import nextJs from "./tech/nextJs.png"
+import typescript from "./tech/typescript.png"
+import wordpress from "./tech/wordpress.jpg"
 
 import gdsc from "./company/gdsc.jpg";
+import deukhurilogo from "./company/deukhuri.png"
+import geolandlogo from "./company/geoland.png"
+import sajilodevlogo from "./company/sajilodev.jpg"
+
+import sharad from "./testimonials/sharad.jpeg"
+import shivaoli from "./testimonials/shivaoli.jpg"
+import shivaraj from "./testimonials/shivraj.jpg"
+import tekpun from "./testimonials/tekpun.jpg"
 
 import contactManager from "./contactManager.jpg";
 import techBlog from "./techBlog.jpg";
 import whatsapp from "./whatsapp.jpg";
+import deukhuri from "./deukhuri.png"
+import geoland from "./geoland.png"
+import gharsanchar from "./gharsanchar.png"
+import payment from "./payment.png"
+
+import sajilodev from "./sajilodev1.png"
+import browser from "./browser.jpg"
 
 export {
   logo,
@@ -39,6 +61,12 @@ export {
   springBoot,
   mysql,
   postgresql,
+  firebase,
+  jenkins,
+  kafka,
+  kubernetes,
+  nextJs,
+  typescript, wordpress, deukhuri, geoland, sajilodev, sharad, shivaoli, shivaraj, tekpun, gharsanchar, payment, sajilodevlogo,geolandlogo,deukhurilogo,browser,
   gdsc,
   contactManager,
   techBlog,

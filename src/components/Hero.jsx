@@ -10,9 +10,7 @@ const Hero = () => {
         className={`${styles.paddingX} absolute inset-0 top-[90px] max-w-7xl mx-auto flex flex-row items-start gap-5`}
       >
         <div className="flex flex-col justify-center items-center mt-5">
-          {/* Small colored circle */}
           <div className="w-5 h-5 rounded-full bg-[#915eff]" />
-          {/* Vertical violet gradient line */}
           <div className="w-1 sm:h-80 h-40 violet-gradient" />
         </div>
 
@@ -23,12 +21,11 @@ const Hero = () => {
           </h1>
           <p className={`${styles.heroSubText} text-white-100 mt-2`}>
             I develop web <br className="sm:block hidden" />
-            applications using Spring Boot and React.
+            applications with a wealth of full stack experience.
           </p>
         </div>
       </div>
 
-      {/* Render the ComputersCanvas component */}
       <ComputersCanvas />
 
       <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
