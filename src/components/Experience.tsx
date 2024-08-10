@@ -50,8 +50,8 @@ const ExperienceCard = ({ experience }:{experience:any}) => (
 
 const Experience = () => {
   return (
-    <>
-      <motion.div variants={textVariant(2)}>
+    <div className={styles.padding}>
+      <motion.div variants={textVariant(0.2)} >
         <p className={styles.sectionSubText}>What I have done so far</p>
         <h2 className={styles.sectionHeadText}>Work Experience</h2>
       </motion.div>
@@ -66,7 +66,7 @@ const Experience = () => {
           ))}
         </VerticalTimeline>
       </div>
-    </>
+    </div>
   );
 };
 
