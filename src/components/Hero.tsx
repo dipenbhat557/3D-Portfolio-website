@@ -37,7 +37,7 @@ const Hero = () => {
       particles.forEach((particle) => {
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = "rgba(0, 255, 204, 0.7)"; // Changed color
+        ctx.fillStyle = "rgba(0, 255, 204, 0.1)"; // Changed color
         ctx.fill();
         
         particle.x += particle.speedX;
@@ -78,13 +78,59 @@ const Hero = () => {
       <canvas ref={canvasRef} className="absolute top-0 left-0 w-full h-full z-10" />
 
       <div className="absolute inset-0 flex flex-col items-center justify-center z-20 text-center">
-        <h1 className={`${styles.heroHeadText} text-white`}>
-          Hello, I'm <span className="text-teal-400">Dipendra</span>
-        </h1>
-        <p className={`${styles.heroSubText} text-gray-300 mt-4`}>
-          Crafting Solutions with Code <br className="sm:block hidden" />
-          Let's Build Something Great Together
-        </p>
+       
+
+
+        <motion.span
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5, duration: 1 }}
+            className="text-transparent absolute top-5 z-20 sm:z-none sm:top-[26%] left-[20%] sm:left-[15%] bg-clip-text bg-gradient-to-r from-[#00ffccb3] to-white font-semibold sm:font-bold text-[40px] sm:text-[60px]"
+          >
+            {"Hello, I'm Dipendra".split("").map((char, index) => (
+              <motion.span
+                key={index}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2, duration: 0.2 * index }}
+                style={{ display: "inline-block" }}
+              >
+                {char === " " ? "\u00A0" : char}{" "}
+              </motion.span>
+            ))}
+            </motion.span>
+
+        <motion.span
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5, duration: 1 }}
+            className="text-transparent absolute top-10 z-20 sm:z-none sm:top-[35%] left-[16%] sm:left-[8%] bg-clip-text bg-gradient-to-r from-[#00ffccb3] to-white font-semibold sm:font-bold text-[30px] sm:text-[50px]"
+          >
+            {"Crafting Solutions with Code".split("").map((char, index) => (
+              <motion.span
+                key={index}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2, duration: 0.2 * index }}
+                style={{ display: "inline-block" }}
+              >
+                {char === " " ? "\u00A0" : char}{" "}
+              </motion.span>
+            ))}
+            <br />
+            {"Let's Build Something Great Together".split("").map((char, index) => (
+              <motion.span
+                key={index}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.2, duration: 0.2 * index }}
+                style={{ display: "inline-block" }}
+              >
+                {char === " " ? "\u00A0" : char}{" "}
+                {/* Render non-breaking space for spaces */}
+              </motion.span>
+            ))}
+          </motion.span>
       </div>
 
       <div className="absolute bottom-10 w-full flex justify-center items-center z-20">
