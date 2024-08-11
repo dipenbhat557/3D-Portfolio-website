@@ -15,10 +15,8 @@ const App = () => {
   return (
     <BrowserRouter>
       <div className="relative z-0 bg-primary">
-        <div className="bg-[url('src/assets/heroBg.png')] opacity-80 bg-cover ">
           <Navbar />
           <Hero />
-        </div>
         <About />
         <Experience />
         <Tech />

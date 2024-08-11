@@ -1,7 +1,25 @@
+import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
+import "../App.css"; 
 
 const Hero = () => {
+  const cursorRef = useRef(null);
+
+  useEffect(() => {
+    const handleMouseMove = (e:any) => {
+      const cursor = cursorRef.current;
+      cursor.style.left = `${e.clientX}px`;
+      cursor.style.top = `${e.clientY}px`;
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
+
   return (
     <section className="relative w-full h-screen mx-auto">
       <div
@@ -17,12 +35,20 @@ const Hero = () => {
             Hi, I'm <span className="text-[#915eff]">Dipendra</span>
           </h1>
           <p className={`${styles.heroSubText} text-white-100 mt-2`}>
-            I develop web <br className="sm:block hidden" />
-            applications with a wealth of full stack experience.
+            Your Vision, My Code <br className="sm:block hidden" />
+            ---One Seamless Journey
           </p>
         </div>
       </div>
 
+      {/* Full-screen moving smoke overlay */}
+      <div className="smoke-overlay"></div>
+
+      {/* Cursor clearing effect */}
+      <motion.div
+        ref={cursorRef}
+        className="clear-smoke"
+      />
 
       <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
         <a href="#about">
