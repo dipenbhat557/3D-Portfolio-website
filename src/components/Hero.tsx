@@ -85,34 +85,29 @@ const Hero = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 1 }}
-            className="text-transparent absolute top-5 z-20 sm:z-none sm:top-[26%] left-[20%] sm:left-[15%] bg-clip-text bg-gradient-to-r from-[#00ffccb3] to-white font-semibold sm:font-bold text-[40px] sm:text-[60px]"
+            className="text-transparent absolute top-10 z-20 sm:z-none sm:top-[25%] left-[16%] sm:left-[5%] bg-clip-text bg-gradient-to-r from-[#00ffccb3] to-white font-semibold sm:font-bold "
           >
-            {"Hello, I'm Dipendra".split("").map((char, index) => (
+          {"Hello, I'm Dipendra".split("").map((char, index) => (
               <motion.span
                 key={index}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.2, duration: 0.2 * index }}
+                transition={{ delay: 0.1, duration: 0.1 * index }}
                 style={{ display: "inline-block" }}
+               className="text-[30px] sm:text-[50px]" 
               >
                 {char === " " ? "\u00A0" : char}{" "}
               </motion.span>
             ))}
-            </motion.span>
-
-        <motion.span
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.5, duration: 1 }}
-            className="text-transparent absolute top-10 z-20 sm:z-none sm:top-[35%] left-[16%] sm:left-[8%] bg-clip-text bg-gradient-to-r from-[#00ffccb3] to-white font-semibold sm:font-bold text-[30px] sm:text-[50px]"
-          >
+            <br/>
             {"Crafting Solutions with Code".split("").map((char, index) => (
               <motion.span
                 key={index}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.2, duration: 0.2 * index }}
+                transition={{ delay: 0.1, duration: 0.1 * index }}
                 style={{ display: "inline-block" }}
+               className="text-[20px] sm:text-[30px]" 
               >
                 {char === " " ? "\u00A0" : char}{" "}
               </motion.span>
@@ -123,11 +118,11 @@ const Hero = () => {
                 key={index}
                 initial={{ opacity: 0 }}
                 animate={{ opacity: 1 }}
-                transition={{ delay: 0.2, duration: 0.2 * index }}
+                transition={{ delay: 0.1, duration: 0.1 * index }}
                 style={{ display: "inline-block" }}
+               className="text-[20px] sm:text-[30px]" 
               >
                 {char === " " ? "\u00A0" : char}{" "}
-                {/* Render non-breaking space for spaces */}
               </motion.span>
             ))}
           </motion.span>
