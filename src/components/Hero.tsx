@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import { motion } from "framer-motion";
-import { styles } from "../styles";
 
 const Hero = () => {
   const canvasRef = useRef(null);
@@ -77,15 +76,12 @@ const Hero = () => {
     <section className="relative w-full h-screen mx-auto overflow-hidden ">
       <canvas ref={canvasRef} className="absolute top-0 left-0 w-full h-full z-10" />
 
-      <div className="absolute inset-0 flex flex-col items-center justify-center z-20 text-center">
-       
-
-
+      <div className="absolute inset-0 flex flex-col items-center justify-center z-10 text-center">
         <motion.span
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.5, duration: 1 }}
-            className="text-transparent absolute top-10 z-20 sm:z-none sm:top-[25%] left-[16%] sm:left-[5%] bg-clip-text bg-gradient-to-r from-[#00ffccb3] to-white font-semibold sm:font-bold "
+            className="text-transparent absolute top-[20%] z-20 sm:z-none sm:top-[25%] left-auto sm:left-[5%] bg-clip-text bg-gradient-to-r from-[#00ffccb3] to-white font-semibold sm:font-bold "
           >
           {"Hello, I'm Dipendra".split("").map((char, index) => (
               <motion.span
@@ -107,7 +103,7 @@ const Hero = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.1, duration: 0.1 * index }}
                 style={{ display: "inline-block" }}
-               className="text-[20px] sm:text-[30px]" 
+               className="text-[18px] sm:text-[30px]" 
               >
                 {char === " " ? "\u00A0" : char}{" "}
               </motion.span>
@@ -120,7 +116,7 @@ const Hero = () => {
                 animate={{ opacity: 1 }}
                 transition={{ delay: 0.1, duration: 0.1 * index }}
                 style={{ display: "inline-block" }}
-               className="text-[20px] sm:text-[30px]" 
+               className="text-[18px] sm:text-[30px]" 
               >
                 {char === " " ? "\u00A0" : char}{" "}
               </motion.span>

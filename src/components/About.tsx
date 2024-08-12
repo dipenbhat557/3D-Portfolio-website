@@ -28,7 +28,7 @@ const ServiceCard = ({ index, title, icon }:{index:any;title:any;icon:any}) => {
 
 const About = () => {
   return (
-    <div className={styles.padding}>
+    <div className={styles.padding} id="about">
       <motion.div variants={textVariant(0.2)}>
         <p className={styles.sectionSubText}>Introduction</p>
         <h2 className={styles.sectionHeadText}>Overview</h2>

@@ -79,7 +79,7 @@ const ProjectCard = ({
 
 const Works = () => {
   return (
-    <div className={styles.padding}>
+    <div className={styles.padding} id="work">
       <motion.div variants={textVariant(0.2)}>
         <p className={styles.sectionSubText}>My Work</p>
         <h2 className={styles.sectionHeadText}>Projects</h2>
