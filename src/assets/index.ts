@@ -43,7 +43,8 @@ import payment from "./payment.png"
 
 import sajilodev from "./sajilodev1.png"
 import browser from "./browser.jpg"
-
+import profile from "./profile.png"
+import resume from "../resume.pdf"
 export {
   logo,
   backend,
@@ -71,4 +72,6 @@ export {
   contactManager,
   techBlog,
   whatsapp,
+  profile,
+  resume
 };
