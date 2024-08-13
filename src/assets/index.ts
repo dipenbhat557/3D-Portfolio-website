@@ -44,7 +44,7 @@ import payment from "./payment.png"
 import sajilodev from "./sajilodev1.png"
 import browser from "./browser.jpg"
 import profile from "./profile.png"
-import resume from "../resume.pdf"
+import resume from "./DIPENDRA_BHATTA_RESUME.pdf"
 export {
   logo,
   backend,

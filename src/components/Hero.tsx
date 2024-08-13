@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { profile } from "../assets";
+import { profile, resume } from "../assets";
 
 
 const Hero = () => {
@@ -14,9 +14,13 @@ const Hero = () => {
                 className="w-full h-full object-cover rounded-full animate-none" 
             />
       </div>
-      <div className="absolute top-[75%] left-[10%] flex gap-4">
-        <button className="bg-[#00ffccb3] px-4 py-2 rounded-xl  text-white">Something</button>
-        <button className="bg-[#00ffccb3] px-4 py-2 rounded-xl  text-white">Download CV</button>
+      <div className="absolute top-[75%] sm:top-[55%] left-[10%] flex gap-4 z-20">
+        <a href={resume} download className="bg-[#00ffccb3] px-4 py-2 sm:w-[200px] sm:h-[50px] flex items-center justify-center rounded-xl text-white hover:bg-[#00d9a7] cursor-pointer">
+          Download CV
+        </a>
+        <a href={resume} download className="bg-[#00ffccb3] px-4 py-2 sm:w-[200px] sm:h-[50px] flex items-center justify-center rounded-xl text-white hover:bg-[#00d9a7] cursor-pointer">
+          Download CV
+        </a>
       </div>
 
       <div className="absolute inset-0 flex flex-col items-center justify-center z-10 text-center">
