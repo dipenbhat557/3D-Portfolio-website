@@ -1,31 +1,22 @@
-@keyframes moveSmoke {
-    0% {
-      background-position: 0 0;
-    }
-    100% {
-      background-position: 200% 200%;
-    }
+.pulse-border {
+  border: 8px solid transparent;
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+  background: linear-gradient(to right, #00ffccb3, #ffffff) padding-box,
+              linear-gradient(to right, transparent, transparent) border-box;
+}
+
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+      opacity: 1;
   }
-  
-  .smoke-overlay {
-    position: absolute;
-    inset: 0;
-    background-image: url('https://www.transparenttextures.com/patterns/black-smoke.png');
-    background-size: cover;
-    background-repeat: repeat;
-    z-index: 1;
-    pointer-events: none;
-    animation: moveSmoke 60s linear infinite;
+  50% {
+      transform: scale(1.01);
+      opacity: 0.9;
   }
-  
-  .clear-smoke {
-    position: absolute;
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    background: radial-gradient(circle, transparent, rgba(0, 0, 0, 0.8));
-    mix-blend-mode: destination-out;
-    pointer-events: none;
-    z-index: 2;
+  100% {
+      transform: scale(1);
+      opacity: 1;
   }
-  
+}

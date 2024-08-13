@@ -1,29 +1,28 @@
 import { motion } from "framer-motion";
 import { profile, resume } from "../assets";
 import { FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa";
-
+import "../App.css"
 
 const Hero = () => {
 
-
   return (
     <section className="relative w-full h-screen mx-auto overflow-hidden ">
-      <div className="rounded-full border-4 border-[#00ffccb3] w-[200px] h-[200px]  sm:w-[400px] sm:h-[400px] absolute top-[40%] right-[23%]  sm:top-[25%] animate-pulse sm:right-[10%]">
+      <div className="rounded-full pulse-border w-[200px] h-[200px]  sm:w-[400px] sm:h-[400px] absolute top-[40%] right-[23%]  sm:top-[25%]  sm:right-[10%]">
             <img 
                 src={profile} 
                 alt="Clipped Example" 
                 className="w-full h-full object-cover rounded-full animate-none" 
             />
       </div>
-      <div className="absolute top-[75%] sm:top-[55%] left-[10%] flex gap-4 z-20">
-        <div className=" flex items-center justify-center gap-2 w-auto sm:h-[50px]">
-          <FaGithub onClick={()=>window.location.href="https://github.com/dipenbhat557"} className="cursor-pointer text-[#00ffccb3] text-3xl"/>
-          <FaLinkedin onClick={()=>window.location.href="https://www.linkedin.com/in/dipendra-bhatta-38ba32259/"} className="cursor-pointer text-[#00ffccb3] text-3xl"/>
-          <FaInstagram onClick={()=>window.location.href="https://www.instagram.com/dipenbhat557/"} className="cursor-pointer text-[#00ffccb3] text-3xl"/>
-           <FaWhatsapp onClick={()=>window.location.href="https://wa.me/+917054625762"} className="cursor-pointer text-[#00ffccb3] text-3xl"/>
+      <div className="absolute top-[75%] sm:top-[55%] left-[9%] flex gap-4 sm:gap-8 z-20">
+        <div className=" flex items-center justify-center gap-2 sm:gap-6 w-auto sm:h-[50px]">
+          <FaGithub onClick={()=>window.open("https://github.com/dipenbhat557","_blank")} className="cursor-pointer text-[#00ffccb3] text-3xl"/>
+          <FaLinkedin onClick={()=>window.open("https://www.linkedin.com/in/dipendra-bhatta-38ba32259/","_blank")} className="cursor-pointer text-[#00ffccb3] text-3xl"/>
+          <FaInstagram onClick={()=>window.open("https://www.instagram.com/dipenbhat557/","_blank")} className="cursor-pointer text-[#00ffccb3] text-3xl"/>
+           <FaWhatsapp onClick={()=>window.open("https://wa.me/+917054625762","_blank")} className="cursor-pointer text-[#00ffccb3] text-3xl"/>
                  
         </div>
-        <a href={resume} download className="bg-[#00ffccb3] px-4 py-2 sm:w-[200px] sm:h-[50px] flex items-center justify-center rounded-xl text-white hover:bg-[#00d9a7] cursor-pointer">
+        <a href={resume} download className=" bg-[#00ffccb3] px-4 py-2 sm:w-[200px] sm:h-[50px] flex items-center justify-center rounded-xl text-white hover:bg-[#00d9a7] cursor-pointer">
           Download CV
         </a>
       </div>
