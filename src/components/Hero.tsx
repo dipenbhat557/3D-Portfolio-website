@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { profile, resume } from "../assets";
+import { FaGithub, FaInstagram, FaLinkedin, FaWhatsapp } from "react-icons/fa";
 
 
 const Hero = () => {
@@ -15,9 +16,13 @@ const Hero = () => {
             />
       </div>
       <div className="absolute top-[75%] sm:top-[55%] left-[10%] flex gap-4 z-20">
-        <a href={resume} download className="bg-[#00ffccb3] px-4 py-2 sm:w-[200px] sm:h-[50px] flex items-center justify-center rounded-xl text-white hover:bg-[#00d9a7] cursor-pointer">
-          Download CV
-        </a>
+        <div className=" flex items-center justify-center gap-2 w-auto sm:h-[50px]">
+          <FaGithub onClick={()=>window.location.href="https://github.com/dipenbhat557"} className="cursor-pointer text-[#00ffccb3] text-3xl"/>
+          <FaLinkedin onClick={()=>window.location.href="https://www.linkedin.com/in/dipendra-bhatta-38ba32259/"} className="cursor-pointer text-[#00ffccb3] text-3xl"/>
+          <FaInstagram onClick={()=>window.location.href="https://www.instagram.com/dipenbhat557/"} className="cursor-pointer text-[#00ffccb3] text-3xl"/>
+           <FaWhatsapp onClick={()=>window.location.href="https://wa.me/+917054625762"} className="cursor-pointer text-[#00ffccb3] text-3xl"/>
+                 
+        </div>
         <a href={resume} download className="bg-[#00ffccb3] px-4 py-2 sm:w-[200px] sm:h-[50px] flex items-center justify-center rounded-xl text-white hover:bg-[#00d9a7] cursor-pointer">
           Download CV
         </a>
