@@ -32,6 +32,8 @@ import {
   sajilodevlogo,
   geolandlogo,
   deukhurilogo,
+  frontend,
+  cloud,
 } from "../assets";
 
 export const navLinks = [
@@ -52,15 +54,18 @@ export const navLinks = [
 const services = [
   {
     title: "Frontend Developer",
-    icon: web,
+    icon: frontend,
+    description: "Crafting responsive and engaging user interfaces using React, Next.js, and Tailwind CSS."
   },
   {
     title: "Backend Developer",
     icon: backend,
+    description:"Building efficient and secure server-side applications with Spring Boot, integrating databases like MySQL and MongoDB."
   },
   {
     title: "Cloud Services",
-    icon: web,
+    icon: cloud,
+    description:"Leveraging cloud platforms for deploying and managing applications, ensuring high availability and scalability."
   },
 ];
 

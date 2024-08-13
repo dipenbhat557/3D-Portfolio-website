@@ -1,5 +1,7 @@
 import logo from "./logo.jpg";
-import backend from "./backend.png";
+import backend from "./backend.jpeg";
+import frontend from "./frontend.jpeg"
+import cloud from "./cloud.png"
 import creator from "./creator.png";
 import mobile from "./mobile.jpg";
 import web from "./web.png";
@@ -48,6 +50,8 @@ import resume from "./DIPENDRA_BHATTA_RESUME.pdf"
 export {
   logo,
   backend,
+  frontend,
+  cloud,
   creator,
   mobile,
   web,
