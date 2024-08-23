@@ -2,10 +2,11 @@ import { useState, useRef, Suspense } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial, Preload } from "@react-three/drei";
 import * as random from "maath/random/dist/maath-random.esm";
+import * as THREE from "three";
 
 // Stars component to render the star field
-const Stars = (props:any) => {
-  const ref = useRef();
+const Stars = (props: any) => {
+  const ref = useRef<THREE.Points>(null); // Explicitly typing ref
 
   // Generate random star positions within a sphere
   const [sphere] = useState(() =>
@@ -13,8 +14,8 @@ const Stars = (props:any) => {
   );
 
   // Use the 'useFrame' hook to animate the star field
-  useFrame((state, delta) => {
-    if(ref?.current){
+  useFrame((_, delta) => {
+    if (ref.current) {
       ref.current.rotation.x -= delta / 10; // Rotate stars along the X-axis
       ref.current.rotation.y -= delta / 15; // Rotate stars along the Y-axis
     }

@@ -4,3 +4,4 @@ declare module 'maath' {
     export default maath;
   }
   
+declare module 'maath/random/dist/maath-random.esm';

@@ -1,6 +1,5 @@
 import {
   backend,
-  web,
   javascript,
   reactjs,
   tailwind,
@@ -234,11 +233,11 @@ const projects = [
       },
       {
         name: "firebase",
-        color: "yellow-text-gradient",
+        color: "orange-text-gradient",
       },
       {
         name: "tailwindcss",
-        color: "white-text-gradient",
+        color: "pink-text-gradient",
       },
       {
         name: "typescript",
@@ -268,11 +267,11 @@ const projects = [
       },
       {
         name: "Appwrite",
-        color: "yellow-text-gradient",
+        color: "orange-text-gradient",
       },
       {
         name: "Sentry",
-        color: "pink-text-gradient",
+        color: "blue-text-gradient",
       },
     ],
     image: payment,
@@ -293,7 +292,7 @@ const projects = [
       },
       {
         name: "tailwindcss",
-        color: "white-text-gradient",
+        color: "orange-text-gradient",
       },
       {
         name: "firebase",
@@ -319,7 +318,7 @@ const projects = [
       },
       {
         name: "tailwindcss",
-        color: "white-text-gradient",
+        color: "orange-text-gradient",
       },
       {
         name: "spring boot",
@@ -327,7 +326,7 @@ const projects = [
       },
       {
         name: "mysql",
-        color: "yellow-text-gradient",
+        color: "blue-text-gradient",
       },
     ],
     image: deukhuri,
@@ -362,7 +361,7 @@ const projects = [
       },
       {
         name: "tailwindcss",
-        color: "white-text-gradient",
+        color: "orange-text-gradient",
       },
       {
         name: "springboot",
