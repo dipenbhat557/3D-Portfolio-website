@@ -109,7 +109,7 @@ const About = () => {
     <motion.div
       ref={containerRef}
       style={{ opacity, y, scale }}
-      className={`${styles.padding} min-h-screen -z-10`}
+      className={`${styles.padding}`}
       id="about"
     >
       <motion.div
@@ -163,8 +163,7 @@ const About = () => {
             transition: { duration: 2, repeat: Infinity }
           }}
         >
-          I'm a skilled software developer with experience in TypeScript and
-          JavaScript, and expertise in frameworks like React, Node.js, and
+          I'm a skilled software developer with experience in JavaScript, Java, Golang, and expertise in frameworks like React, Node.js, and
           Three.js. I'm a quick learner and collaborate closely with clients to
           create efficient, scalable, and user-friendly solutions that solve
           real-world problems. Let's work together to bring your ideas to life!

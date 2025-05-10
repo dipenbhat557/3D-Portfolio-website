@@ -201,7 +201,7 @@ const Works = () => {
     <motion.div
       ref={containerRef}
       style={{ opacity, y }}
-      className={`${styles.padding} min-h-screen`}
+      className={`${styles.padding}`}
       id="works"
     >
       <motion.div

@@ -3,10 +3,12 @@ import { technologies } from '../constants'
 import { SectionWrapper } from '../hoc'
 import { styles } from '../styles'
 import { useRef } from 'react'
+import { IconType } from 'react-icons'
 
 interface Technology {
   name: string
-  icon: string
+  icon: IconType
+  color: string
 }
 
 const TechCard = ({ technology, index }: { technology: Technology; index: number }) => {
@@ -21,6 +23,9 @@ const TechCard = ({ technology, index }: { technology: Technology; index: number
   const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0.8])
   const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.7, 1, 0.7])
 
+  // Dynamic icon component
+  const Icon = technology.icon
+
   return (
     <motion.div
       ref={cardRef}
@@ -31,51 +36,68 @@ const TechCard = ({ technology, index }: { technology: Technology; index: number
       transition={{ duration: 0.5, delay: index * 0.05 }}
     >
       <motion.div
-        className="bg-tertiary w-full h-full rounded-full relative group overflow-hidden flex items-center justify-center shadow-xl p-4"
+        className="bg-tertiary w-full h-full rounded-full relative group overflow-hidden flex items-center justify-center shadow-xl"
         whileHover={{ 
           scale: 1.15, 
           rotate: 360,
-          boxShadow: '0 0 30px rgba(0, 255, 204, 0.4)' 
+          boxShadow: `0 0 30px rgba(${hexToRgb(technology.color)}, 0.4)` 
         }}
         transition={{ duration: 0.6, ease: "easeOut" }}
       >
         <motion.div
-          className="absolute inset-0 bg-gradient-to-r from-[#00ffcc] via-white to-[#00d9a7] opacity-0 group-hover:opacity-15 transition-opacity duration-300"
+          className="absolute inset-0 opacity-0 group-hover:opacity-15 transition-opacity duration-300"
+          style={{
+            background: `linear-gradient(45deg, ${technology.color}22, ${technology.color}44)`
+          }}
           animate={{
             background: [
-              'linear-gradient(45deg, #00ffcc 0%, #00d9a7 100%)',
-              'linear-gradient(135deg, #00d9a7 0%, #00ffcc 100%)',
-              'linear-gradient(225deg, #00ffcc 0%, #00d9a7 100%)',
-              'linear-gradient(315deg, #00d9a7 0%, #00ffcc 100%)',
-              'linear-gradient(45deg, #00ffcc 0%, #00d9a7 100%)'
+              `linear-gradient(45deg, ${technology.color}22, ${technology.color}44)`,
+              `linear-gradient(135deg, ${technology.color}44, ${technology.color}22)`,
+              `linear-gradient(225deg, ${technology.color}22, ${technology.color}44)`,
+              `linear-gradient(315deg, ${technology.color}44, ${technology.color}22)`,
+              `linear-gradient(45deg, ${technology.color}22, ${technology.color}44)`
             ],
-            transition: { duration: 5, repeat: Infinity, ease: 'linear' }
           }}
+          transition={{ duration: 5, repeat: Infinity, ease: 'linear' }}
         />
         
         <motion.div 
-          className="relative z-10 w-full h-full flex items-center justify-center"
+          className="relative z-10 w-3/5 h-3/5 flex items-center justify-center"
           whileHover={{ rotate: 360 }}
           transition={{ duration: 1, ease: "easeInOut" }}
         >
-          <motion.img
-            src={technology.icon}
-            alt={technology.name}
-            className="w-4/5 h-4/5 object-contain"
-            whileHover={{ scale: 1.1 }}
-            animate={{
-              filter: [
-                'drop-shadow(0 0 6px rgba(0, 255, 204, 0.4))',
-                'drop-shadow(0 0 12px rgba(0, 255, 204, 0.7))',
-                'drop-shadow(0 0 6px rgba(0, 255, 204, 0.4))',
-              ]
+          <Icon 
+            size="100%" 
+            color={technology.color}
+            style={{
+              filter: `drop-shadow(0 0 8px ${technology.color}88)`
             }}
-            transition={{ duration: 2, repeat: Infinity }}
           />
+        </motion.div>
+
+        {/* Tech name label - appears on hover */}
+        <motion.div
+          className="absolute bottom-0 left-0 right-0 bg-black/80 py-1 px-2 text-xs text-center opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          style={{ color: technology.color }}
+        >
+          {technology.name}
         </motion.div>
       </motion.div>
     </motion.div>
   )
+}
+
+// Helper function to convert hex color to RGB
+const hexToRgb = (hex: string) => {
+  // Remove the hash if it exists
+  hex = hex.replace('#', '')
+  
+  // Parse the hex values
+  const r = parseInt(hex.substring(0, 2), 16)
+  const g = parseInt(hex.substring(2, 4), 16)
+  const b = parseInt(hex.substring(4, 6), 16)
+  
+  return `${r}, ${g}, ${b}`
 }
 
 const Tech = () => {
@@ -92,11 +114,11 @@ const Tech = () => {
     <motion.div
       ref={containerRef}
       style={{ opacity, y }}
-      className={`${styles.padding} min-h-screen`}
+      className={`${styles.padding} `}
       id="tech"
     >
       <motion.div
-        className="text-center mb-16"
+        className="text-center mb-12 md:mb-16"
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
@@ -105,9 +127,9 @@ const Tech = () => {
           className={styles.sectionSubText}
           animate={{
             textShadow: [
-              '0 0 8px rgba(0, 255, 204, 0.5)',
-              '0 0 16px rgba(0, 255, 204, 0.8)',
-              '0 0 8px rgba(0, 255, 204, 0.5)'
+              '0 0 8px rgba(0, 255, 204, 0.3)',
+              '0 0 16px rgba(0, 255, 204, 0.6)',
+              '0 0 8px rgba(0, 255, 204, 0.3)'
             ],
             transition: { duration: 2, repeat: Infinity }
           }}
@@ -118,9 +140,9 @@ const Tech = () => {
           className={styles.sectionHeadText}
           animate={{
             textShadow: [
-              '0 0 8px rgba(0, 255, 204, 0.5)',
-              '0 0 16px rgba(0, 255, 204, 0.8)',
-              '0 0 8px rgba(0, 255, 204, 0.5)'
+              '0 0 8px rgba(0, 255, 204, 0.3)',
+              '0 0 16px rgba(0, 255, 204, 0.6)',
+              '0 0 8px rgba(0, 255, 204, 0.3)'
             ],
             transition: { duration: 2, repeat: Infinity }
           }}
@@ -136,12 +158,12 @@ const Tech = () => {
         transition={{ duration: 0.5, delay: 0.4 }}
       >
         <motion.p
-          className="text-secondary text-[17px] max-w-3xl text-center leading-[30px] mb-16"
+          className="text-secondary text-[15px] md:text-[17px] max-w-3xl text-center leading-[24px] md:leading-[30px] mb-8 md:mb-16"
           animate={{
             textShadow: [
-              '0 0 8px rgba(0, 255, 204, 0.3)',
-              '0 0 16px rgba(0, 255, 204, 0.6)',
-              '0 0 8px rgba(0, 255, 204, 0.3)'
+              '0 0 8px rgba(0, 255, 204, 0.2)',
+              '0 0 16px rgba(0, 255, 204, 0.4)',
+              '0 0 8px rgba(0, 255, 204, 0.2)'
             ],
             transition: { duration: 2, repeat: Infinity }
           }}
@@ -150,7 +172,7 @@ const Tech = () => {
         </motion.p>
 
         <motion.div 
-          className="flex flex-wrap justify-center gap-10 max-w-5xl mx-auto"
+          className="flex flex-wrap justify-center gap-6 md:gap-10 max-w-5xl mx-auto"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.7 }}

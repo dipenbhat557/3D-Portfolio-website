@@ -159,7 +159,7 @@ const Feedbacks = () => {
     <motion.div
       ref={containerRef}
       style={{ opacity, y }}
-      className={`${styles.padding} min-h-screen`}
+      className={`${styles.padding}`}
       id="feedbacks"
     >
       <motion.div

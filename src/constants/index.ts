@@ -1,21 +1,6 @@
 import {
   backend,
-  javascript,
-  reactjs,
-  tailwind,
-  git,
-  docker,
-  springBoot,
-  mysql,
-  postgresql,
   whatsapp,
-  nextJs,
-  typescript,
-  kubernetes,
-  jenkins,
-  firebase,
-  kafka,
-  wordpress,
   sajilodev,
   geoland,
   deukhuri,
@@ -32,6 +17,21 @@ import {
   xDevs,
   casebase,
 } from "../assets";
+
+// Import React icons
+import { 
+  SiSpring, 
+  SiNextdotjs, 
+  SiReact, 
+  SiTailwindcss,
+  SiDocker,
+  SiKubernetes,
+  SiJenkins,
+  SiFirebase,
+  SiApachekafka,
+  SiWordpress,
+  SiExpress,
+} from 'react-icons/si';
 
 export const navLinks = [
   {
@@ -69,64 +69,54 @@ const services = [
 const technologies = [
   {
     name: "Spring Boot",
-    icon: springBoot,
+    icon: SiSpring,
+    color: "#6DB33F"
   },
   {
     name: "Next JS",
-    icon: nextJs,
-  },
-  {
-    name: "TypeScript",
-    icon: typescript,
+    icon: SiNextdotjs,
+    color: "#ffff"
   },
   {
     name: "React JS",
-    icon: reactjs,
+    icon: SiReact,
+    color: "#61DAFB"
   },
   {
-    name: "JavaScript",
-    icon: javascript,
+    name: "Express JS",
+    icon: SiExpress,
+    color: "#339933"
   },
   {
     name: "Tailwind CSS",
-    icon: tailwind,
-  },
-  {
-    name: "Git",
-    icon: git,
+    icon: SiTailwindcss,
+    color: "#06B6D4"
   },
   {
     name: "Docker",
-    icon: docker,
+    icon: SiDocker,
+    color: "#2496ED"
   },
   {
     name: "Kubernetes",
-    icon: kubernetes,
+    icon: SiKubernetes,
+    color: "#326CE5"
   },
   {
     name: "Jenkins",
-    icon: jenkins,
+    icon: SiJenkins,
+    color: "#D24939"
   },
   {
     name: "Firebase",
-    icon: firebase,
-  },
-  {
-    name: "Kafka",
-    icon: kafka,
+    icon: SiFirebase,
+    color: "#FFCA28"
   },
   {
     name: "WordPress CMS",
-    icon: wordpress,
-  },
-  {
-    name: "MySQL",
-    icon: mysql,
-  },
-  {
-    name: "PostgreSQL",
-    icon: postgresql,
-  },
+    icon: SiWordpress,
+    color: "#21759B"
+  }
 ];
 
 const experiences = [
