@@ -109,7 +109,7 @@ const About = () => {
     <motion.div
       ref={containerRef}
       style={{ opacity, y, scale }}
-      className={`${styles.padding} min-h-screen`}
+      className={`${styles.padding} min-h-screen -z-10`}
       id="about"
     >
       <motion.div

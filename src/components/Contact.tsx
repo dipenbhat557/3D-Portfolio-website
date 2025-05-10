@@ -140,12 +140,6 @@ const Contact = () => {
               className="absolute bottom-0 right-10 text-[#00ffcc]"
               initial={{ opacity: 0, scale: 0 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ 
-                duration: 0.8, 
-                delay: 0.6,
-                type: "spring", 
-                stiffness: 200 
-              }}
               animate={{
                 y: [0, -15, 0],
                 rotate: [0, 5, 0, -5, 0]

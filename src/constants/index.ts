@@ -8,9 +8,6 @@ import {
   springBoot,
   mysql,
   postgresql,
-  gdsc,
-  techBlog,
-  contactManager,
   whatsapp,
   nextJs,
   typescript,
@@ -29,8 +26,6 @@ import {
   payment,
   gharsanchar,
   sajilodevlogo,
-  geolandlogo,
-  deukhurilogo,
   frontend,
   cloud,
   hyperce,
@@ -48,8 +43,8 @@ export const navLinks = [
     title: "Work",
   },
   {
-    id: "contact",
-    title: "Contact",
+    id: "conkkktact",
+    title: "Conklkltact",
   },
 ];
 

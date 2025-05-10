@@ -4,6 +4,16 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --section-gap: 2rem; /* Reduced from default spacing */
+  --color-primary: #00ffcc;
+  --color-primary-dark: #00d9a7;
+  --color-text: #ffffff;
+  --color-text-secondary: #aaa6c3;
+  --color-background: #050816;
+  --transition-speed: 0.3s;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -12,12 +22,49 @@
   scroll-behavior: smooth;
 }
 
+html, body {
+  overflow-x: hidden;
+}
+
 .hash-span {
-  margin-top: -100px;
-  padding-bottom: 100px;
+  margin-top: -80px; /* Reduced from -100px */
+  padding-bottom: 80px; /* Reduced from 100px */
   display: block;
 }
 
+/* Grid pattern background */
+.bg-grid-pattern {
+  background-image: 
+    linear-gradient(to right, rgba(0, 255, 204, 0.1) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 255, 204, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+/* Improved spacing between sections */
+section {
+  padding-top: var(--section-gap);
+  padding-bottom: var(--section-gap);
+}
+
+/* Reduce the vertical spacing between components */
+.section-gap-small {
+  margin-bottom: 2rem !important; /* Smaller gap */
+}
+
+.section-gap-medium {
+  margin-bottom: 4rem !important; /* Medium gap */
+}
+
+.section-gap-large {
+  margin-bottom: 6rem !important; /* Larger gap */
+}
+
+/* Cursor effect styles */
+.cursor-none {
+  cursor: none !important;
+}
+
+/* Existing styles */
 .black-gradient {
   background: #000000;
   background: -webkit-linear-gradient(to right, #434343, #000000);
@@ -34,6 +81,11 @@
   background: "#00cea8";
   background: linear-gradient(90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
   background: -webkit-linear-gradient(-90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
+}
+
+/* Teal gradient for consistent brand color */
+.teal-gradient {
+  background: linear-gradient(90deg, var(--color-primary) 0%, var(--color-primary-dark) 100%);
 }
 
 .orange-text-gradient {
@@ -66,6 +118,25 @@
   background: linear-gradient(to top, #ec008c, #fc6767);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+/* Teal text gradient for consistent branding */
+.teal-text-gradient {
+  background: var(--color-primary);
+  background: -webkit-linear-gradient(to right, var(--color-primary), var(--color-primary-dark));
+  background: linear-gradient(to right, var(--color-primary), var(--color-primary-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Improved animations with shorter duration */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .canvas-loader {
