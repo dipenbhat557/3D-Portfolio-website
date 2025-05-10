@@ -28,7 +28,6 @@ import {
   SiKubernetes,
   SiJenkins,
   SiFirebase,
-  SiApachekafka,
   SiWordpress,
   SiExpress,
 } from 'react-icons/si';
