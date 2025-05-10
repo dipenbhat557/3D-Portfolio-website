@@ -29,6 +29,9 @@ import gdsc from "./company/gdsc.jpg";
 import deukhurilogo from "./company/deukhuri.png"
 import geolandlogo from "./company/geoland.png"
 import sajilodevlogo from "./company/sajilodev.jpg"
+import hyperce from "./company/hyperce.png"
+import xDevs from "./company/100xdevs.png"
+import casebase from "./company/casebase.png"
 
 import sharad from "./testimonials/sharad.jpeg"
 import shivaoli from "./testimonials/shivaoli.jpg"
@@ -71,7 +74,7 @@ export {
   kafka,
   kubernetes,
   nextJs,
-  typescript, wordpress, deukhuri, geoland, sajilodev, sharad, shivaoli, shivaraj, tekpun, gharsanchar, payment, sajilodevlogo,geolandlogo,deukhurilogo,browser,
+  typescript, wordpress, deukhuri, geoland, sajilodev, hyperce, xDevs, casebase, sharad, shivaoli, shivaraj, tekpun, gharsanchar, payment, sajilodevlogo,geolandlogo,deukhurilogo,browser,
   gdsc,
   contactManager,
   techBlog,

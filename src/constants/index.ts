@@ -33,6 +33,9 @@ import {
   deukhurilogo,
   frontend,
   cloud,
+  hyperce,
+  xDevs,
+  casebase,
 } from "../assets";
 
 export const navLinks = [
@@ -133,16 +136,42 @@ const technologies = [
 
 const experiences = [
   {
-    title: "Backend Facilitator",
-    company_name: "Google Developers Students Club, FET, Jain University",
-    icon: gdsc,
+    title: "Full Stack Developer",
+    company_name: "Casebase",
+    icon: casebase,
     iconBg: "#383E56",
-    date: "July 2023 - July 2024",
+    date: "March 2025 - Present",
     points: [
-      "Led backend development efforts for web applications using Spring Boot.",
-      "Organized workshops and study jams to educate peers about backend technologies.",
-      "Mentored students in developing and deploying web applications.",
-      "Collaborated with other facilitators to promote open-source projects.",
+      "Architected and implemented scalable backend solutions using Node.js and Express",
+      "Developed and maintained RESTful APIs with MongoDB integration",
+      "Implemented CI/CD pipelines using GitHub Actions for automated testing and deployment",
+      "Mentored junior developers and conducted code reviews to ensure code quality"
+    ],
+  },
+  {
+    title: "Full Stack Developer",
+    company_name: "100xDevs",
+    icon: xDevs,
+    iconBg: "#383E56",
+    date: "October 2024 - February 2025",
+    points: [
+      "Built full-stack applications using React, Node.js, and PostgreSQL",
+      "Implemented authentication and authorization using JWT and OAuth2",
+      "Optimized database queries and improved application performance by 40%",
+      "Collaborated with cross-functional teams to deliver features on schedule"
+    ],
+  },
+  {
+    title: "Full Stack Developer",
+    company_name: "Hyperce",
+    icon: hyperce,
+    iconBg: "#383E56",
+    date: "June 2024 - November 2024",
+    points: [
+      "Developed microservices architecture using Docker and Kubernetes",
+      "Implemented real-time features using WebSocket and Socket.io",
+      "Created responsive UIs with React and Material-UI",
+      "Set up monitoring and logging using ELK stack"
     ],
   },
   {
@@ -152,39 +181,13 @@ const experiences = [
     iconBg: "#E6DEDD",
     date: "November 2023 - June 2024",
     points: [
-      "Developed and deployed multiple production-ready projects, including the official website of SajiloDev.",
-      "Designed and implemented RESTful APIs using Spring Boot for backend services.",
-      "Built responsive user interfaces with React TypeScript and Tailwind CSS.",
-      "Integrated third-party services and APIs to enhance application functionality.",
-      "Promoted open-source initiatives through advocacy and educational events.",
+      "Developed and deployed multiple production-ready projects, including the official website of SajiloDev",
+      "Designed and implemented RESTful APIs using Spring Boot for backend services",
+      "Built responsive user interfaces with React TypeScript and Tailwind CSS",
+      "Integrated third-party services and APIs to enhance application functionality",
+      "Promoted open-source initiatives through advocacy and educational events"
     ],
-  },
-  {
-    title: "Full Stack Developer",
-    company_name: "Geoland Tours and Travels",
-    icon: geolandlogo,
-    iconBg: "#383E56",
-    date: "January 2024 - April 2024",
-    points: [
-      "Created user and admin consoles using React TypeScript and Tailwind for the frontend and Firebase for the backend.",
-      "Implemented secure authentication and authorization mechanisms.",
-      "Optimized database queries for improved performance.",
-      "Integrated third-party APIs for payment gateways and map services.",
-    ],
-  },
-  {
-    title: "Full Stack Developer",
-    company_name: "Deukhuri Multiple Campus",
-    icon: deukhurilogo,
-    iconBg: "#E6DEDD",
-    date: "December 2023 - August 2024",
-    points: [
-      "Developed user and admin consoles using React TypeScript and Tailwind for the frontend and Spring Boot for the backend.",
-      "Implemented a robust and scalable database schema using MySQL.",
-      "Enhanced the performance of the application through efficient coding practices.",
-      "Integrated educational tools and third-party services for a better user experience.",
-    ],
-  },
+  }
 ];
 
 const testimonials = [
@@ -370,49 +373,7 @@ const projects = [
     ],
     image: whatsapp,
     source_code_link: "https://github.com/dipenbhat557/Whatsapp-clone",
-  },
-  {
-    name: "Tech Blog",
-    description:
-      "A blogging platform where users can write and publish articles on various technology topics, read articles from other authors, and engage in discussions through comments, fostering a community of tech enthusiasts.",
-    tags: [
-      {
-        name: "JSP",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "servlet",
-        color: "green-text-gradient",
-      },
-      {
-        name: "mysql",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: techBlog,
-    source_code_link: "https://github.com/dipenbhat557/TechBlog",
-  },
-  {
-    name: "Contact Manager",
-    description:
-      "An application for managing and organizing contacts, including features for adding, editing, and deleting contacts, as well as searching for specific contacts, ensuring users can keep their contact information up-to-date and easily accessible.",
-    tags: [
-      {
-        name: "thymeleaf",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "springboot",
-        color: "green-text-gradient",
-      },
-      {
-        name: "mysql",
-        color: "pink-text-gradient",
-      },
-    ],
-    image: contactManager,
-    source_code_link: "https://github.com/dipenbhat557/Smart-Contact-Manager",
-  },
+  }
 ];
 
 

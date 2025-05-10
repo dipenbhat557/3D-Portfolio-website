@@ -3,6 +3,7 @@ import { FaGithub, FaLinkedin, FaInstagram, FaWhatsapp } from 'react-icons/fa'
 import { TypeAnimation } from 'react-type-animation'
 import { resume } from '../assets'
 import { useRef, useEffect } from 'react'
+import { FaXTwitter } from 'react-icons/fa6'
 
 const Hero = () => {
   const containerRef = useRef(null)
@@ -221,7 +222,7 @@ const Hero = () => {
               { icon: FaGithub, url: 'https://github.com/dipenbhat557' },
               { icon: FaLinkedin, url: 'https://www.linkedin.com/in/dipendra-bhatta-38ba32259/' },
               { icon: FaInstagram, url: 'https://www.instagram.com/dipenbhat557/' },
-              { icon: FaWhatsapp, url: 'https://wa.me/+917054625762' }
+              { icon: FaXTwitter, url: 'https://x.com/dipenbhat557' }
             ].map(({ icon: Icon, url }, index) => (
               <motion.a
                 key={index}
@@ -246,7 +247,7 @@ const Hero = () => {
           </motion.div>
 
           {/* Download CV Button */}
-          <motion.a
+          {/* <motion.a
             href={resume}
             download
             className="inline-block bg-gradient-to-r from-[#00ffcc] to-[#00d9a7] text-white px-8 py-3 rounded-full font-semibold hover:shadow-lg hover:shadow-[#00ffcc]/20 transition-all duration-300"
@@ -265,7 +266,7 @@ const Hero = () => {
             }}
           >
             Download CV
-          </motion.a>
+          </motion.a> */}
         </motion.div>
 
         {/* Scroll Indicator */}

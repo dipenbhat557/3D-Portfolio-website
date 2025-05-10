@@ -1,58 +1,106 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { testimonials } from '../constants'
-import { textVariant } from '../utils/motion'
 import { SectionWrapper } from '../hoc'
 import { styles } from '../styles'
 import { useRef } from 'react'
 
-const FeedbackCard = ({ feedback }: { feedback: any; index: number }) => {
+// Define proper type for feedback
+interface Feedback {
+  testimonial: string
+  name: string
+  designation: string
+  company: string
+  image: string
+}
+
+const FeedbackCard = ({ feedback, index }: { feedback: Feedback; index: number }) => {
   const cardRef = useRef(null)
   const { scrollYProgress } = useScroll({
     target: cardRef,
     offset: ['start end', 'end start']
   })
 
-  const rotateZ = useTransform(scrollYProgress, [0, 0.5, 1], [0, 180, 360])
-  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0.8])
-  const y = useTransform(scrollYProgress, [0, 0.5, 1], [50, 0, -50])
+  // Changed to subtle rotation that won't invert text
+  const rotateY = useTransform(scrollYProgress, [0, 0.5, 1], [-5, 0, 5])
+  const scale = useTransform(scrollYProgress, [0, 0.5, 1], [0.9, 1, 0.9])
+  const y = useTransform(scrollYProgress, [0, 0.5, 1], [20, 0, -20])
+  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0.8, 1, 0.8])
 
   return (
     <motion.div
       ref={cardRef}
-      style={{ rotateZ, scale, y }}
-      className="w-full sm:w-[320px] perspective-1000"
+      style={{ rotateY, scale, y, opacity }}
+      className="w-full"
+      initial={{ opacity: 0, y: 50 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
     >
       <motion.div
-        className="bg-black-200 p-8 rounded-3xl relative group overflow-hidden"
-        whileHover={{ scale: 1.05, y: -5 }}
-        transition={{ duration: 0.5 }}
+        className="bg-tertiary p-8 rounded-3xl relative group overflow-hidden shadow-xl"
+        whileHover={{ 
+          scale: 1.03, 
+          y: -10, 
+          boxShadow: '0 25px 50px -12px rgba(0, 255, 204, 0.25)'
+        }}
+        transition={{ duration: 0.3 }}
       >
+        {/* Animated gradient background */}
         <motion.div
-          className="absolute inset-0 bg-gradient-to-r from-[#00ffcc] to-[#00d9a7] opacity-0 group-hover:opacity-10 transition-opacity duration-300"
+          className="absolute inset-0 bg-gradient-to-r from-[#00ffcc]/5 to-[#00d9a7]/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
           animate={{
             background: [
-              'linear-gradient(45deg, #00ffcc 0%, #00d9a7 100%)',
-              'linear-gradient(135deg, #00d9a7 0%, #00ffcc 100%)',
-              'linear-gradient(225deg, #00ffcc 0%, #00d9a7 100%)',
-              'linear-gradient(315deg, #00d9a7 0%, #00ffcc 100%)',
-              'linear-gradient(45deg, #00ffcc 0%, #00d9a7 100%)'
-            ]
+              'linear-gradient(45deg, rgba(0, 255, 204, 0.05) 0%, rgba(0, 217, 167, 0.05) 100%)',
+              'linear-gradient(135deg, rgba(0, 217, 167, 0.05) 0%, rgba(0, 255, 204, 0.05) 100%)',
+              'linear-gradient(225deg, rgba(0, 255, 204, 0.05) 0%, rgba(0, 217, 167, 0.05) 100%)',
+              'linear-gradient(315deg, rgba(0, 217, 167, 0.05) 0%, rgba(0, 255, 204, 0.05) 100%)',
+              'linear-gradient(45deg, rgba(0, 255, 204, 0.05) 0%, rgba(0, 217, 167, 0.05) 100%)'
+            ],
+            transition: { duration: 5, repeat: Infinity, ease: 'linear' }
           }}
-          transition={{ duration: 5, repeat: Infinity, ease: 'linear' }}
         />
-        <div className="flex flex-col">
-          <div className="flex items-center gap-4 mb-6">
+        
+        {/* Quote mark */}
+        <motion.div
+          className="absolute top-4 right-4 text-[#00ffcc] opacity-20 text-6xl font-serif"
+          animate={{
+            opacity: [0.1, 0.2, 0.1],
+            scale: [1, 1.1, 1]
+          }}
+          transition={{ duration: 3, repeat: Infinity }}
+        >
+          "
+        </motion.div>
+
+        <div className="flex flex-col relative z-10">
+          {/* Testimonial text */}
+          <motion.p
+            className="text-white-100 text-[16px] leading-[28px] mb-8 italic"
+            animate={{
+              textShadow: [
+                '0 0 8px rgba(0, 255, 204, 0.2)',
+                '0 0 16px rgba(0, 255, 204, 0.4)',
+                '0 0 8px rgba(0, 255, 204, 0.2)'
+              ],
+              transition: { duration: 2, repeat: Infinity }
+            }}
+          >
+            "{feedback.testimonial}"
+          </motion.p>
+
+          {/* Author info */}
+          <div className="flex items-center gap-4 mt-auto">
             <motion.div
-              className="w-16 h-16 rounded-full overflow-hidden"
-              whileHover={{ scale: 1.1, rotate: 360 }}
+              className="w-16 h-16 rounded-full overflow-hidden border-2 border-[#00ffcc]/30"
+              whileHover={{ scale: 1.1 }}
+              transition={{ duration: 0.3 }}
               animate={{
                 boxShadow: [
-                  '0 0 20px rgba(0, 255, 204, 0.2)',
-                  '0 0 40px rgba(0, 255, 204, 0.4)',
-                  '0 0 20px rgba(0, 255, 204, 0.2)'
-                ]
+                  '0 0 10px rgba(0, 255, 204, 0.2)',
+                  '0 0 20px rgba(0, 255, 204, 0.4)',
+                  '0 0 10px rgba(0, 255, 204, 0.2)'
+                ],
+                transition: { duration: 2, repeat: Infinity }
               }}
-              transition={{ duration: 2, repeat: Infinity }}
             >
               <img
                 src={feedback.image}
@@ -60,54 +108,37 @@ const FeedbackCard = ({ feedback }: { feedback: any; index: number }) => {
                 className="w-full h-full object-cover"
               />
             </motion.div>
+            
             <div>
               <motion.h3
-                className="text-white text-[20px] font-bold"
-                animate={{
-                  textShadow: [
-                    '0 0 8px rgba(0, 255, 204, 0.5)',
-                    '0 0 16px rgba(0, 255, 204, 0.8)',
-                    '0 0 8px rgba(0, 255, 204, 0.5)'
-                  ]
-                }}
-                transition={{ duration: 2, repeat: Infinity }}
-              >
-                {feedback.name}
-              </motion.h3>
-              <motion.p
-                className="text-secondary text-[14px]"
+                className="text-white text-[18px] font-bold"
                 animate={{
                   textShadow: [
                     '0 0 8px rgba(0, 255, 204, 0.3)',
                     '0 0 16px rgba(0, 255, 204, 0.6)',
                     '0 0 8px rgba(0, 255, 204, 0.3)'
-                  ]
+                  ],
+                  transition: { duration: 2, repeat: Infinity }
                 }}
-                transition={{ duration: 2, repeat: Infinity }}
               >
-                {feedback.designation}
+                {feedback.name}
+              </motion.h3>
+              
+              <motion.p
+                className="text-[#00ffcc] text-[14px] font-medium"
+                animate={{
+                  textShadow: [
+                    '0 0 8px rgba(0, 255, 204, 0.2)',
+                    '0 0 16px rgba(0, 255, 204, 0.4)',
+                    '0 0 8px rgba(0, 255, 204, 0.2)'
+                  ],
+                  transition: { duration: 2, repeat: Infinity }
+                }}
+              >
+                {feedback.designation} • {feedback.company}
               </motion.p>
             </div>
           </div>
-          <motion.p
-            className="text-white-100 text-[16px] leading-[24px]"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            animate={{
-              textShadow: [
-                '0 0 8px rgba(0, 255, 204, 0.2)',
-                '0 0 16px rgba(0, 255, 204, 0.4)',
-                '0 0 8px rgba(0, 255, 204, 0.2)'
-              ],
-              transition: {
-                duration: 2,
-                repeat: Infinity
-              }
-            }}
-          >
-            {feedback.testimonial}
-          </motion.p>
         </div>
       </motion.div>
     </motion.div>
@@ -132,38 +163,33 @@ const Feedbacks = () => {
       id="feedbacks"
     >
       <motion.div
-        variants={textVariant(0.2)}
-        initial="hidden"
-        whileInView="show"
-        viewport={{ once: true }}
         className="text-center mb-16"
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
       >
         <motion.p
           className={styles.sectionSubText}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
           animate={{
             textShadow: [
               '0 0 8px rgba(0, 255, 204, 0.5)',
               '0 0 16px rgba(0, 255, 204, 0.8)',
               '0 0 8px rgba(0, 255, 204, 0.5)'
-            ]
+            ],
+            transition: { duration: 2, repeat: Infinity }
           }}
-          transition={{ duration: 2, repeat: Infinity }}
         >
           What others say
         </motion.p>
         <motion.h2
           className={styles.sectionHeadText}
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
           animate={{
             textShadow: [
               '0 0 8px rgba(0, 255, 204, 0.5)',
               '0 0 16px rgba(0, 255, 204, 0.8)',
               '0 0 8px rgba(0, 255, 204, 0.5)'
-            ]
+            ],
+            transition: { duration: 2, repeat: Infinity }
           }}
         >
           Testimonials
@@ -178,31 +204,25 @@ const Feedbacks = () => {
       >
         <motion.p
           className="text-secondary text-[17px] max-w-3xl text-center leading-[30px] mb-16"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.6 }}
           animate={{
             textShadow: [
               '0 0 8px rgba(0, 255, 204, 0.3)',
               '0 0 16px rgba(0, 255, 204, 0.6)',
               '0 0 8px rgba(0, 255, 204, 0.3)'
-            ]
+            ],
+            transition: { duration: 2, repeat: Infinity }
           }}
         >
-          People I've worked with have said some nice things about my work.
-          Here are a few of their testimonials.
+          Here's what clients and colleagues have to say about my work and collaboration style.
         </motion.p>
 
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 w-full"
-          initial={{ opacity: 0, scale: 0.5 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.5, delay: 0.8 }}
-        >
-          {testimonials.map((feedback, index) => (
-            <FeedbackCard key={feedback.name} feedback={feedback} index={index} />
-          ))}
-        </motion.div>
+        <div className="w-full max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {testimonials.map((feedback, index) => (
+              <FeedbackCard key={feedback.name} feedback={feedback} index={index} />
+            ))}
+          </div>
+        </div>
       </motion.div>
     </motion.div>
   )
