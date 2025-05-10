@@ -1,11 +1,11 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { technologies } from '../constants'
-import { fadeIn, textVariant } from '../utils/motion'
+import { textVariant } from '../utils/motion'
 import { SectionWrapper } from '../hoc'
 import { styles } from '../styles'
 import { useRef } from 'react'
 
-const TechCard = ({ technology, index }: { technology: { name: string; icon: string }; index: number }) => {
+const TechCard = ({ technology }: { technology: { name: string; icon: string }; index: number }) => {
   const cardRef = useRef(null)
   const { scrollYProgress } = useScroll({
     target: cardRef,
@@ -57,7 +57,6 @@ const TechCard = ({ technology, index }: { technology: { name: string; icon: str
                 '0 0 20px rgba(0, 255, 204, 0.2)'
               ]
             }}
-            transition={{ duration: 2, repeat: Infinity }}
           >
             <motion.img
               src={technology.icon}
@@ -122,7 +121,6 @@ const Tech = () => {
               '0 0 8px rgba(0, 255, 204, 0.5)'
             ]
           }}
-          transition={{ duration: 2, repeat: Infinity }}
         >
           What I work with
         </motion.p>
@@ -138,7 +136,6 @@ const Tech = () => {
               '0 0 8px rgba(0, 255, 204, 0.5)'
             ]
           }}
-          transition={{ duration: 2, repeat: Infinity }}
         >
           Technologies
         </motion.h2>
@@ -162,7 +159,6 @@ const Tech = () => {
               '0 0 8px rgba(0, 255, 204, 0.3)'
             ]
           }}
-          transition={{ duration: 2, repeat: Infinity }}
         >
           I've worked with a range of technologies in the web development world.
           From Back-end To Design

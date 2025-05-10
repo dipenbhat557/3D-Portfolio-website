@@ -151,9 +151,9 @@ const Hero = () => {
                 '0 0 8px rgba(0, 255, 204, 0.5)',
                 '0 0 16px rgba(0, 255, 204, 0.8)',
                 '0 0 8px rgba(0, 255, 204, 0.5)'
-              ]
+              ],
+              transition: { duration: 0.8, delay: 0.2 }
             }}
-            transition={{ duration: 0.8, delay: 0.2 }}
           >
             Hi, I'm{' '}
             <motion.span
@@ -203,9 +203,9 @@ const Hero = () => {
                 '0 0 8px rgba(0, 255, 204, 0.3)',
                 '0 0 16px rgba(0, 255, 204, 0.6)',
                 '0 0 8px rgba(0, 255, 204, 0.3)'
-              ]
+              ],
+              transition: { duration: 0.8, delay: 0.6 }
             }}
-            transition={{ duration: 0.8, delay: 0.6 }}
           >
             I build exceptional digital experiences that are fast, accessible, and visually appealing.
           </motion.p>
@@ -236,9 +236,9 @@ const Hero = () => {
                     '0 0 20px rgba(0, 255, 204, 0.2)',
                     '0 0 40px rgba(0, 255, 204, 0.4)',
                     '0 0 20px rgba(0, 255, 204, 0.2)'
-                  ]
+                  ],
+                  transition: { duration: 2, repeat: Infinity }
                 }}
-                transition={{ duration: 2, repeat: Infinity }}
               >
                 <Icon />
               </motion.a>
@@ -260,9 +260,9 @@ const Hero = () => {
                 '0 0 20px rgba(0, 255, 204, 0.2)',
                 '0 0 40px rgba(0, 255, 204, 0.4)',
                 '0 0 20px rgba(0, 255, 204, 0.2)'
-              ]
+              ],
+              transition: { duration: 0.8, delay: 1 }
             }}
-            transition={{ duration: 0.8, delay: 1 }}
           >
             Download CV
           </motion.a>

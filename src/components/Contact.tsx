@@ -35,12 +35,12 @@ const Contact = () => {
           transition={{ duration: 0.5 }}
           animate={{
             textShadow: [
-              '0 0 8px rgba(0, 255, 204, 0.5)',
-              '0 0 16px rgba(0, 255, 204, 0.8)',
-              '0 0 8px rgba(0, 255, 204, 0.5)'
-            ]
+              '0 0 8px rgba(0, 255, 204, 0.3)',
+              '0 0 16px rgba(0, 255, 204, 0.6)',
+              '0 0 8px rgba(0, 255, 204, 0.3)'
+            ],
+            transition: { duration: 2, repeat: Infinity }
           }}
-          transition={{ duration: 2, repeat: Infinity }}
         >
           Get in touch
         </motion.p>
@@ -51,12 +51,12 @@ const Contact = () => {
           transition={{ duration: 0.5, delay: 0.2 }}
           animate={{
             textShadow: [
-              '0 0 8px rgba(0, 255, 204, 0.5)',
-              '0 0 16px rgba(0, 255, 204, 0.8)',
-              '0 0 8px rgba(0, 255, 204, 0.5)'
-            ]
+              '0 0 8px rgba(0, 255, 204, 0.3)',
+              '0 0 16px rgba(0, 255, 204, 0.6)',
+              '0 0 8px rgba(0, 255, 204, 0.3)'
+            ],
+            transition: { duration: 2, repeat: Infinity }
           }}
-          transition={{ duration: 2, repeat: Infinity }}
         >
           Contact
         </motion.h2>
@@ -78,9 +78,9 @@ const Contact = () => {
               '0 0 8px rgba(0, 255, 204, 0.3)',
               '0 0 16px rgba(0, 255, 204, 0.6)',
               '0 0 8px rgba(0, 255, 204, 0.3)'
-            ]
+            ],
+            transition: { duration: 2, repeat: Infinity }
           }}
-          transition={{ duration: 2, repeat: Infinity }}
         >
           I'm currently looking for new opportunities. Whether you have a question or just want to say hi,
           I'll try my best to get back to you!
@@ -118,9 +118,9 @@ const Contact = () => {
                     '0 0 8px rgba(0, 255, 204, 0.3)',
                     '0 0 16px rgba(0, 255, 204, 0.6)',
                     '0 0 8px rgba(0, 255, 204, 0.3)'
-                  ]
+                  ],
+                  transition: { duration: 2, repeat: Infinity }
                 }}
-                transition={{ duration: 2, repeat: Infinity }}
               >
                 Name
               </motion.label>
@@ -148,9 +148,9 @@ const Contact = () => {
                     '0 0 8px rgba(0, 255, 204, 0.3)',
                     '0 0 16px rgba(0, 255, 204, 0.6)',
                     '0 0 8px rgba(0, 255, 204, 0.3)'
-                  ]
+                  ],
+                  transition: { duration: 2, repeat: Infinity }
                 }}
-                transition={{ duration: 2, repeat: Infinity }}
               >
                 Email
               </motion.label>
@@ -178,9 +178,9 @@ const Contact = () => {
                     '0 0 8px rgba(0, 255, 204, 0.3)',
                     '0 0 16px rgba(0, 255, 204, 0.6)',
                     '0 0 8px rgba(0, 255, 204, 0.3)'
-                  ]
+                  ],
+                  transition: { duration: 2, repeat: Infinity }
                 }}
-                transition={{ duration: 2, repeat: Infinity }}
               >
                 Message
               </motion.label>
@@ -205,12 +205,12 @@ const Contact = () => {
               whileTap={{ scale: 0.95 }}
               animate={{
                 boxShadow: [
-                  '0 0 20px rgba(0, 255, 204, 0.2)',
-                  '0 0 40px rgba(0, 255, 204, 0.4)',
-                  '0 0 20px rgba(0, 255, 204, 0.2)'
-                ]
+                  '0 0 10px rgba(0, 255, 204, 0.2)',
+                  '0 0 20px rgba(0, 255, 204, 0.4)',
+                  '0 0 10px rgba(0, 255, 204, 0.2)'
+                ],
+                transition: { duration: 2, repeat: Infinity }
               }}
-              transition={{ duration: 2, repeat: Infinity }}
             >
               Send Message
             </motion.button>

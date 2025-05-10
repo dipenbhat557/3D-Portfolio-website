@@ -5,7 +5,7 @@ import { SectionWrapper } from '../hoc'
 import { styles } from '../styles'
 import { useRef } from 'react'
 
-const FeedbackCard = ({ feedback, index }: { feedback: any; index: number }) => {
+const FeedbackCard = ({ feedback }: { feedback: any; index: number }) => {
   const cardRef = useRef(null)
   const { scrollYProgress } = useScroll({
     target: cardRef,
@@ -45,7 +45,6 @@ const FeedbackCard = ({ feedback, index }: { feedback: any; index: number }) => 
             <motion.div
               className="w-16 h-16 rounded-full overflow-hidden"
               whileHover={{ scale: 1.1, rotate: 360 }}
-              transition={{ duration: 0.5 }}
               animate={{
                 boxShadow: [
                   '0 0 20px rgba(0, 255, 204, 0.2)',
@@ -100,9 +99,12 @@ const FeedbackCard = ({ feedback, index }: { feedback: any; index: number }) => 
                 '0 0 8px rgba(0, 255, 204, 0.2)',
                 '0 0 16px rgba(0, 255, 204, 0.4)',
                 '0 0 8px rgba(0, 255, 204, 0.2)'
-              ]
+              ],
+              transition: {
+                duration: 2,
+                repeat: Infinity
+              }
             }}
-            transition={{ duration: 2, repeat: Infinity }}
           >
             {feedback.testimonial}
           </motion.p>
@@ -140,7 +142,6 @@ const Feedbacks = () => {
           className={styles.sectionSubText}
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5 }}
           animate={{
             textShadow: [
               '0 0 8px rgba(0, 255, 204, 0.5)',
@@ -164,7 +165,6 @@ const Feedbacks = () => {
               '0 0 8px rgba(0, 255, 204, 0.5)'
             ]
           }}
-          transition={{ duration: 2, repeat: Infinity }}
         >
           Testimonials
         </motion.h2>
@@ -188,7 +188,6 @@ const Feedbacks = () => {
               '0 0 8px rgba(0, 255, 204, 0.3)'
             ]
           }}
-          transition={{ duration: 2, repeat: Infinity }}
         >
           People I've worked with have said some nice things about my work.
           Here are a few of their testimonials.

@@ -4,7 +4,7 @@ import { SectionWrapper } from '../hoc'
 import { styles } from '../styles'
 import { useRef } from 'react'
 
-const ExperienceCard = ({ experience, index }: { experience: any; index: number }) => {
+const ExperienceCard = ({ experience }: { experience: any; index: number }) => {
   const cardRef = useRef(null)
   const { scrollYProgress } = useScroll({
     target: cardRef,
@@ -81,7 +81,6 @@ const ExperienceCard = ({ experience, index }: { experience: any; index: number 
                     '0 0 8px rgba(0, 255, 204, 0.2)'
                   ]
                 }}
-                transition={{ duration: 2, repeat: Infinity }}
               >
                 {point}
               </motion.li>

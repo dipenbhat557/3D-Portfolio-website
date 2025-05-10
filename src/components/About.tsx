@@ -1,11 +1,9 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { styles } from '../styles'
-import { services } from '../constants'
-import { fadeIn, textVariant } from '../utils/motion'
 import { SectionWrapper } from '../hoc'
 import { useRef } from 'react'
 
-const ServiceCard = ({ title, icon, index }: { title: string; icon: string; index: number }) => {
+const ServiceCard = ({ title, icon }: { title: string; icon: string; index: number }) => {
   const cardRef = useRef(null)
   const { scrollYProgress } = useScroll({
     target: cardRef,
@@ -52,7 +50,6 @@ const ServiceCard = ({ title, icon, index }: { title: string; icon: string; inde
                 '0 0 20px rgba(0, 255, 204, 0.2)'
               ]
             }}
-            transition={{ duration: 2, repeat: Infinity }}
           >
             <motion.img
               src={icon}

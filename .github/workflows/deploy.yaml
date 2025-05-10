@@ -20,7 +20,7 @@ jobs:
       run: npm run build
 
     - name: Zip the build folder
-      run: zip -r build.zip build/
+      run: zip -r build.zip dist/
 
     - name: Deploy via FTP
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
@@ -30,6 +30,6 @@ jobs:
         password: ${{ secrets.FTP_PASSWORD }}
         protocol: ftp
         port: 21
-        local-dir: build/
-        server-dir: /public_html/
+        local-dir: dist/
+        server-dir: /public_html/ 
         dangerous-clean-slate: true 

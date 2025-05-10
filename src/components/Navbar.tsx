@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { styles } from '../styles'
@@ -9,7 +9,6 @@ import { useRef } from 'react'
 const Navbar = () => {
   const [active, setActive] = useState('')
   const [toggle, setToggle] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
   const containerRef = useRef(null)
 
   const { scrollYProgress } = useScroll({
@@ -20,14 +19,6 @@ const Navbar = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.1], [0, 1])
   const y = useTransform(scrollYProgress, [0, 0.1], [-100, 0])
   const blur = useTransform(scrollYProgress, [0, 0.1], [0, 10])
-
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 50)
-    }
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
 
   return (
     <motion.nav

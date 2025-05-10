@@ -1,5 +1,5 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
-import { fadeIn, textVariant } from '../utils/motion'
+import { textVariant } from '../utils/motion'
 import { SectionWrapper } from '../hoc'
 import { styles } from '../styles'
 import { projects } from '../constants'
@@ -17,7 +17,7 @@ interface Project {
   website_link?: string
 }
 
-const ProjectCard = ({ project, index }: { project: Project; index: number }) => {
+const ProjectCard = ({ project }: { project: Project; index: number }) => {
   const cardRef = useRef(null)
   const { scrollYProgress } = useScroll({
     target: cardRef,
@@ -82,7 +82,6 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
                     '0 0 20px rgba(0, 255, 204, 0.2)'
                   ]
                 }}
-                transition={{ duration: 2, repeat: Infinity }}
               >
                 <img
                   src="https://raw.githubusercontent.com/adrianhajdin/project_3d_developer_portfolio/main/src/assets/github.png"
@@ -101,9 +100,9 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
                   '0 0 8px rgba(0, 255, 204, 0.5)',
                   '0 0 16px rgba(0, 255, 204, 0.8)',
                   '0 0 8px rgba(0, 255, 204, 0.5)'
-                ]
+                ],
+                transition: { duration: 2, repeat: Infinity }
               }}
-              transition={{ duration: 2, repeat: Infinity }}
             >
               {project.name}
             </motion.h3>
@@ -114,9 +113,9 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
                   '0 0 8px rgba(0, 255, 204, 0.3)',
                   '0 0 16px rgba(0, 255, 204, 0.6)',
                   '0 0 8px rgba(0, 255, 204, 0.3)'
-                ]
+                ],
+                transition: { duration: 2, repeat: Infinity }
               }}
-              transition={{ duration: 2, repeat: Infinity }}
             >
               {project.description}
             </motion.p>
@@ -132,9 +131,9 @@ const ProjectCard = ({ project, index }: { project: Project; index: number }) =>
                       '0 0 8px rgba(0, 255, 204, 0.2)',
                       '0 0 16px rgba(0, 255, 204, 0.4)',
                       '0 0 8px rgba(0, 255, 204, 0.2)'
-                    ]
+                    ],
+                    transition: { duration: 2, repeat: Infinity }
                   }}
-                  transition={{ duration: 2, repeat: Infinity }}
                 >
                   #{tag.name}
                 </motion.p>
@@ -181,9 +180,9 @@ const Works = () => {
               '0 0 8px rgba(0, 255, 204, 0.5)',
               '0 0 16px rgba(0, 255, 204, 0.8)',
               '0 0 8px rgba(0, 255, 204, 0.5)'
-            ]
+            ],
+            transition: { duration: 2, repeat: Infinity }
           }}
-          transition={{ duration: 2, repeat: Infinity }}
         >
           My work
         </motion.p>
@@ -197,9 +196,9 @@ const Works = () => {
               '0 0 8px rgba(0, 255, 204, 0.5)',
               '0 0 16px rgba(0, 255, 204, 0.8)',
               '0 0 8px rgba(0, 255, 204, 0.5)'
-            ]
+            ],
+            transition: { duration: 2, repeat: Infinity }
           }}
-          transition={{ duration: 2, repeat: Infinity }}
         >
           Projects
         </motion.h2>
@@ -221,9 +220,9 @@ const Works = () => {
               '0 0 8px rgba(0, 255, 204, 0.3)',
               '0 0 16px rgba(0, 255, 204, 0.6)',
               '0 0 8px rgba(0, 255, 204, 0.3)'
-            ]
+            ],
+            transition: { duration: 2, repeat: Infinity }
           }}
-          transition={{ duration: 2, repeat: Infinity }}
         >
           Following projects showcase my skills and experience through real-world examples of my work.
           Each project is briefly described with links to code repositories and live demos in it.
