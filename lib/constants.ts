@@ -2,6 +2,7 @@ export const navLinks = [
   { id: "about", label: "About" },
   { id: "experience", label: "Experience" },
   { id: "projects", label: "Projects" },
+  { id: "media", label: "Media" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -34,12 +35,12 @@ export const experiences = [
     company: "AIPrep",
     url: "https://aiprep.in",
     logo: "/images/companies/aiprep.png",
-    period: "2025 - Present",
+    period: "September 2025 - Present",
     points: [
-      "Architected an AI video generation platform with LLM orchestration and Manim rendering pipelines serving thousands of users",
-      "Designed a model routing system that reduced per-video LLM costs by 80% through intelligent quality-tier selection",
-      "Built distributed video rendering infrastructure with Celery workers on GKE, handling 24 concurrent generation jobs",
-      "Led migration from CIVO to GCP, implementing GKE clusters, ingress/TLS, secret management, and cost optimization",
+      "Architected an AI video generation platform with custom modal orchestration and Manim rendering pipelines serving thousands of users",
+      "Designed a model routing system that reduced per-video LLM costs by 80% through intelligent tier selection",
+      "Built distributed video rendering infrastructure with Celery workers on GKE & Modal, handling unlimited concurrent generation jobs",
+      "Led migration from CIVO to GCP & Modal, implementing GKE clusters, ingress/TLS, secret management, and cost optimization",
       "Established engineering practices including CI/CD pipelines, code review standards, and deployment workflows",
     ],
   },
@@ -48,12 +49,11 @@ export const experiences = [
     company: "Casebase",
     url: null,
     logo: "/images/companies/casebase.png",
-    period: "March 2025 - Present",
+    period: "March 2025 - September 2025",
     points: [
       "Architected and implemented scalable backend solutions using Node.js and Express",
       "Developed and maintained RESTful APIs with MongoDB integration",
-      "Implemented CI/CD pipelines using GitHub Actions for automated testing and deployment",
-      "Mentored junior developers and conducted code reviews to ensure code quality",
+      "Implemented CI/CD pipelines using GitHub Actions for automated testing and deployment"
     ],
   },
   {
@@ -61,12 +61,12 @@ export const experiences = [
     company: "100xDevs",
     url: null,
     logo: "/images/companies/100xdevs.png",
-    period: "October 2024 - February 2025",
+    period: "October 2024 - September 2025",
     points: [
-      "Built full-stack applications using React, Node.js, and PostgreSQL",
-      "Implemented authentication and authorization using JWT and OAuth2",
+      "Built full-stack applications using various technologies",
       "Optimized database queries and improved application performance by 40%",
       "Collaborated with cross-functional teams to deliver features on schedule",
+      "Served as a tutor for 100xSchool(Alt. College) & bootcamp"
     ],
   },
   {
@@ -158,4 +158,15 @@ export const projects = [
     tags: ["React", "TypeScript", "Firebase", "Tailwind CSS"],
     featured: false,
   },
+];
+
+export const mediaVideos = [
+  { videoId: "rE7xqjO5UMI" },
+  { videoId: "msKpAYFe46U" },
+  { videoId: "Ft3tkF-p-ds" },
+  { videoId: "bGrcs3rcP4g" },
+];
+
+export const mediaTweets = [
+  { tweetId: "1901637312166981790", author: "kirat_tw" },
 ];
