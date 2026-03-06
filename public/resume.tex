@@ -1,0 +1,180 @@
+%-------------------------
+% ATS-Friendly Resume - Dipendra Bhatta
+% Compile with pdflatex on Overleaf
+%-------------------------
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{tabularx}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-0.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Section formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule\vspace{-5pt}]
+
+% Custom commands
+\newcommand{\resumeItem}[1]{\item\small{#1\vspace{-2pt}}}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{\small#1} & \small#2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+%-------------------------------------------
+\begin{document}
+
+%----------HEADER----------
+\begin{center}
+  \textbf{\Huge \scshape Dipendra Bhatta} \\ \vspace{4pt}
+  \small CTO \& AI Infrastructure Engineer \\ \vspace{4pt}
+  \small
+  \href{mailto:dipenbhat557@gmail.com}{dipenbhat557@gmail.com} $|$
+  \href{https://dipen.info}{dipen.info} $|$
+  \href{https://github.com/dipenbhat557}{GitHub} $|$
+  \href{https://linkedin.com/in/dipendra-bhatta-38ba32259}{LinkedIn} $|$
+  \href{https://x.com/dipenbhat557}{X}
+\end{center}
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart
+
+  \resumeSubheading
+    {Chief Technology Officer}{Sep 2025 -- Present}
+    {AIPrep $\cdot$ \href{https://aiprep.in}{aiprep.in}}{Remote}
+  \resumeItemListStart
+    \resumeItem{Architected AI video generation platform with LLM orchestration and Manim rendering pipelines serving thousands of users}
+    \resumeItem{Designed model routing system that reduced per-video LLM costs by 80\% through intelligent quality-tier selection}
+    \resumeItem{Built distributed rendering infrastructure with Celery workers on GKE \& Modal, handling unlimited concurrent jobs}
+    \resumeItem{Led cloud migration from CIVO to GCP \& Modal --- GKE clusters, ingress/TLS, secret management, cost optimization}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {Full Stack Developer}{Mar 2025 -- Sep 2025}
+    {Casebase}{Remote}
+  \resumeItemListStart
+    \resumeItem{Architected scalable backend solutions using Node.js/Express with MongoDB}
+    \resumeItem{Developed and maintained RESTful APIs powering client-facing applications}
+    \resumeItem{Implemented CI/CD pipelines using GitHub Actions for automated testing and deployment}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {Full Stack Developer \& Tutor}{Oct 2024 -- Sep 2025}
+    {100xDevs}{Remote}
+  \resumeItemListStart
+    \resumeItem{Built full-stack applications and optimized database queries, improving performance by 40\%}
+    \resumeItem{Served as tutor for 100xSchool (Alt. College) and the coding bootcamp}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {Full Stack Developer}{Jun 2024 -- Nov 2024}
+    {Hyperce}{Remote}
+  \resumeItemListStart
+    \resumeItem{Developed microservices architecture with Docker and Kubernetes}
+    \resumeItem{Implemented real-time features using WebSocket and Socket.io}
+    \resumeItem{Set up monitoring and logging with ELK stack}
+  \resumeItemListEnd
+
+  \resumeSubheading
+    {Full Stack Developer}{Nov 2023 -- Jun 2024}
+    {SajiloDev $\cdot$ \href{https://sajilodev.com}{sajilodev.com}}{Nepal}
+  \resumeItemListStart
+    \resumeItem{Developed and deployed multiple production-ready projects including the official company website}
+    \resumeItem{Designed RESTful APIs with Spring Boot and built UIs with React TypeScript and Tailwind CSS}
+  \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Key Projects}
+\resumeSubHeadingListStart
+
+  \resumeProjectHeading
+    {AIPrep --- AI Video Generation Platform}{\href{https://aiprep.in}{aiprep.in}}
+  \resumeItemListStart
+    \resumeItem{Orchestrates multiple LLMs with Manim rendering to generate animated educational videos at scale}
+    \resumeItem{Intelligent model routing reduced per-video costs by 80\%; distributed rendering with Celery on GKE}
+    \resumeItem{\textbf{Stack:} Python, FastAPI, Celery, Kubernetes (GKE), Modal, RAG, LLM Orchestration}
+  \resumeItemListEnd
+
+  \resumeProjectHeading
+    {FlyAirQ --- Airline Booking Platform}{\href{https://flyairq.com}{flyairq.com}}
+  \resumeItemListStart
+    \resumeItem{Full-stack travel booking platform with flight search, booking pipeline, and payment integration}
+    \resumeItem{\textbf{Stack:} React, Node.js, TypeScript, PostgreSQL}
+  \resumeItemListEnd
+
+  \resumeProjectHeading
+    {Kinamna --- Production Web Platform}{\href{https://kinamna.com}{kinamna.com}}
+  \resumeItemListStart
+    \resumeItem{Production platform with modern architecture, responsive design, and optimized performance}
+    \resumeItem{\textbf{Stack:} React, TypeScript, Tailwind CSS}
+  \resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+  \small{\item{
+    \textbf{Languages:}{ Python, TypeScript, JavaScript, Go, Java} \\
+    \textbf{Backend:}{ FastAPI, Node.js, Express, Spring Boot, Celery} \\
+    \textbf{Frontend:}{ React, Next.js, Tailwind CSS} \\
+    \textbf{Infrastructure:}{ Docker, Kubernetes (GKE), GCP, Modal, CI/CD (GitHub Actions), Linux} \\
+    \textbf{Data:}{ PostgreSQL, MongoDB, Redis, RAG Pipelines, LLM Orchestration, Embeddings}
+  }}
+\end{itemize}
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+  \resumeSubheading
+    {Jain University}{Oct 2022 -- Jun 2026}
+    {B.Tech, Computer Science and Engineering}{}
+\resumeSubHeadingListEnd
+
+%-------------------------------------------
+\end{document}

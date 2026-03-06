@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     title: "Dipendra Bhatta | CTO & AI Infrastructure Engineer",
     description:
       "CTO at AIPrep building AI video generation platforms. Expert in LLM orchestration, Kubernetes, GCP, and full-stack development.",
-    url: "https://dipendrabhatta.com.np",
+    url: "https://dipen.info",
     siteName: "Dipendra Bhatta",
     locale: "en_US",
     type: "website",

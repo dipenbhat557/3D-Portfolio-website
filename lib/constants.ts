@@ -112,7 +112,7 @@ export const projects = [
     name: "FlyAirQ",
     description:
       "Airline and travel booking platform for flight search, booking, and travel management. Currently in staging with full booking pipeline.",
-    url: "https://staging.flyairq.com",
+    url: "https://flyairq.com",
     github: null,
     image: "/images/projects/flyairq.png",
     tags: ["React", "Node.js", "TypeScript", "PostgreSQL"],
