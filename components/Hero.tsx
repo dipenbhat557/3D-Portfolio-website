@@ -37,6 +37,9 @@ export default function Hero() {
         >
           Building intelligent{" "}
           <span className="gradient-text">systems at scale</span>
+          <span className="sr-only">
+            — Dipendra Bhatta (Dipen), CTO & Co-founder at AIPrep
+          </span>
         </motion.h1>
 
         <motion.p

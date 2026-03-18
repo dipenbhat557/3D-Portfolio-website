@@ -38,11 +38,12 @@ export default function About() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          I&apos;m a CTO and AI infrastructure engineer with a track record of
-          building production systems that scale. At AIPrep, I architect LLM
-          orchestration pipelines, design cost-optimized cloud infrastructure on
-          GKE, and lead engineering teams. I turn complex AI capabilities into
-          reliable, production-grade products.
+          I&apos;m Dipendra Bhatta — CTO and AI infrastructure engineer with a
+          track record of building production systems that scale. As co-founder
+          at AIPrep, I architect LLM orchestration pipelines, design
+          cost-optimized cloud infrastructure on GKE, and lead engineering
+          teams. I turn complex AI capabilities into reliable, production-grade
+          products.
         </motion.p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">

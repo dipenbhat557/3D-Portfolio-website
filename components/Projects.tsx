@@ -41,7 +41,7 @@ export default function Projects() {
                     {project.image ? (
                       <Image
                         src={project.image}
-                        alt={project.name}
+                        alt={`${project.name} - project by Dipendra Bhatta`}
                         width={600}
                         height={400}
                         className="w-full h-48 md:h-full object-cover"
@@ -64,7 +64,7 @@ export default function Projects() {
                   {project.image ? (
                     <Image
                       src={project.image}
-                      alt={project.name}
+                      alt={`${project.name} - project by Dipendra Bhatta`}
                       width={600}
                       height={400}
                       className="w-full h-48 object-cover"

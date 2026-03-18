@@ -5,7 +5,8 @@ export default function Footer() {
     <footer className="border-t border-border py-8 px-4">
       <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
         <p className="text-muted text-sm">
-          &copy; {new Date().getFullYear()} Dipendra Bhatta
+          &copy; {new Date().getFullYear()} Dipendra Bhatta — CTO &
+          Co-founder at AIPrep
         </p>
         <div className="flex gap-6">
           {socialLinks.map((link) => (

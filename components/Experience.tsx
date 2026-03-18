@@ -35,7 +35,7 @@ export default function Experience() {
                     {exp.logo ? (
                       <Image
                         src={exp.logo}
-                        alt={exp.company}
+                        alt={`${exp.company} logo - ${exp.title} Dipendra Bhatta`}
                         width={32}
                         height={32}
                         className="object-contain"
