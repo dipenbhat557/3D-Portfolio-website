@@ -15,9 +15,14 @@ const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
 export default function Hero() {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4">
-      {/* Subtle gradient background */}
+      {/* Layered background */}
       <div className="absolute inset-0 bg-gradient-to-b from-background via-background to-card" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(0,255,204,0.05)_0%,transparent_70%)]" />
+
+      {/* Animated gradient orbs */}
+      <div className="absolute top-1/4 -left-32 w-[500px] h-[500px] bg-accent/[0.04] rounded-full blur-[128px] animate-float pointer-events-none" />
+      <div className="absolute bottom-1/3 -right-24 w-[400px] h-[400px] bg-accent/[0.03] rounded-full blur-[100px] animate-float-delayed pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-[300px] h-[300px] bg-accent/[0.02] rounded-full blur-[80px] animate-float-slow pointer-events-none" />
 
       <div className="relative z-10 max-w-3xl mx-auto text-center">
         <motion.p

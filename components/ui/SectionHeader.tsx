@@ -22,6 +22,7 @@ export default function SectionHeader({ label, heading }: SectionHeaderProps) {
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground">
         {heading}
       </h2>
+      <div className="mt-4 w-12 h-px bg-gradient-to-r from-accent/50 to-transparent" />
     </motion.div>
   );
 }

@@ -19,14 +19,14 @@ export default function Experience() {
             {experiences.map((exp, index) => (
               <motion.div
                 key={`${exp.company}-${exp.period}`}
-                className="relative pl-10"
+                className="relative pl-10 group"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
               >
                 {/* Timeline dot */}
-                <div className="absolute left-0 top-1.5 w-[11px] h-[11px] rounded-full bg-accent border-2 border-background" />
+                <div className="absolute left-0 top-1.5 w-[11px] h-[11px] rounded-full bg-accent border-2 border-background shadow-[0_0_8px_rgba(0,255,204,0.4)] group-hover:shadow-[0_0_12px_rgba(0,255,204,0.6)] transition-shadow duration-300" />
 
                 {/* Header row: logo + title + period */}
                 <div className="flex items-start gap-4 mb-3">

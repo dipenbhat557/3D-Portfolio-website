@@ -1,5 +1,6 @@
 "use client";
 
+import { useRef } from "react";
 import { motion } from "framer-motion";
 import SectionHeader from "@/components/ui/SectionHeader";
 import { HiCpuChip, HiCloud, HiCodeBracket } from "react-icons/hi2";
@@ -25,6 +26,49 @@ const capabilities = [
   },
 ];
 
+function CapabilityCard({
+  cap,
+  index,
+}: {
+  cap: (typeof capabilities)[number];
+  index: number;
+}) {
+  const cardRef = useRef<HTMLDivElement>(null);
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!cardRef.current) return;
+    const rect = cardRef.current.getBoundingClientRect();
+    cardRef.current.style.setProperty(
+      "--mouse-x",
+      `${e.clientX - rect.left}px`
+    );
+    cardRef.current.style.setProperty(
+      "--mouse-y",
+      `${e.clientY - rect.top}px`
+    );
+  };
+
+  return (
+    <motion.div
+      ref={cardRef}
+      onMouseMove={handleMouseMove}
+      className="spotlight-card bg-card/80 backdrop-blur-sm border border-border rounded-2xl p-6 hover:border-accent/40 hover:shadow-[0_0_40px_-12px_rgba(0,255,204,0.15)] transition-all duration-500"
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+    >
+      <cap.icon className="text-accent text-3xl mb-4 relative z-10" />
+      <h3 className="text-foreground font-semibold text-lg mb-3 relative z-10">
+        {cap.title}
+      </h3>
+      <p className="text-muted text-sm leading-relaxed relative z-10">
+        {cap.description}
+      </p>
+    </motion.div>
+  );
+}
+
 export default function About() {
   return (
     <section id="about" className="py-24 px-4">
@@ -48,22 +92,7 @@ export default function About() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {capabilities.map((cap, index) => (
-            <motion.div
-              key={cap.title}
-              className="bg-card border border-border rounded-xl p-6 hover:border-accent/30 transition-colors"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-            >
-              <cap.icon className="text-accent text-3xl mb-4" />
-              <h3 className="text-foreground font-semibold text-lg mb-3">
-                {cap.title}
-              </h3>
-              <p className="text-muted text-sm leading-relaxed">
-                {cap.description}
-              </p>
-            </motion.div>
+            <CapabilityCard key={cap.title} cap={cap} index={index} />
           ))}
         </div>
       </div>

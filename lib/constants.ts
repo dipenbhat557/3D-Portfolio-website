@@ -97,26 +97,55 @@ export const experiences = [
   },
 ];
 
-export const projects = [
+export interface ProjectMetric {
+  label: string;
+  value: string;
+}
+
+export interface Project {
+  name: string;
+  description: string;
+  url: string | null;
+  github: string | null;
+  image: string | null;
+  tags: string[];
+  featured: boolean;
+  role: string;
+  metrics?: ProjectMetric[];
+}
+
+export const projects: Project[] = [
   {
     name: "AIPrep",
     description:
-      "AI video generation platform that orchestrates multiple LLMs to create animated educational videos with Manim. Features intelligent model routing that reduced per-video costs by 80%, distributed rendering with Celery workers on GKE, and RAG pipelines for content accuracy.",
+      "AI video generation platform that orchestrates multiple LLMs to create animated educational videos with Manim. Features intelligent model routing, distributed rendering on GKE, and RAG pipelines for content accuracy.",
     url: "https://aiprep.in",
     github: null,
     image: "/images/projects/aiprep.png",
     tags: ["Python", "FastAPI", "LLM", "Celery", "GKE", "Kubernetes", "RAG"],
     featured: true,
+    role: "CTO & Co-founder",
+    metrics: [
+      { label: "Cost Reduction", value: "80%" },
+      { label: "Infrastructure", value: "GKE + Modal" },
+      { label: "Architecture", value: "Distributed" },
+    ],
   },
   {
     name: "FlyAirQ",
     description:
-      "Airline and travel booking platform for flight search, booking, and travel management. Currently in staging with full booking pipeline.",
+      "Airline and travel booking platform with end-to-end flight search, booking, and travel management. Full booking pipeline with real-time flight data integration.",
     url: "https://flyairq.com",
     github: null,
     image: "/images/projects/flyairq.png",
     tags: ["React", "Node.js", "TypeScript", "PostgreSQL"],
     featured: true,
+    role: "Full Stack Developer",
+    metrics: [
+      { label: "Pipeline", value: "End-to-End" },
+      { label: "Data", value: "Real-time" },
+      { label: "Status", value: "Production" },
+    ],
   },
   {
     name: "Petals KTM",
@@ -127,6 +156,7 @@ export const projects = [
     image: "/images/projects/petalsktm.png",
     tags: ["Next.js", "Vercel", "E-commerce", "TypeScript"],
     featured: false,
+    role: "Developer",
   },
   {
     name: "Kinamna",
@@ -137,6 +167,7 @@ export const projects = [
     image: "/images/projects/kinamna.png",
     tags: ["React", "TypeScript", "Tailwind CSS"],
     featured: false,
+    role: "Developer",
   },
   {
     name: "SajiloDev",
@@ -147,6 +178,7 @@ export const projects = [
     image: "/images/projects/sajilodev.png",
     tags: ["React", "TypeScript", "Firebase", "Tailwind CSS"],
     featured: false,
+    role: "Developer",
   },
   {
     name: "Geoland Travels",
@@ -157,6 +189,7 @@ export const projects = [
     image: "/images/projects/geoland.png",
     tags: ["React", "TypeScript", "Firebase", "Tailwind CSS"],
     featured: false,
+    role: "Developer",
   },
 ];
 
