@@ -132,6 +132,38 @@ export const projects: Project[] = [
     ],
   },
   {
+    name: "Insiders.bot",
+    description:
+      "Analytics platform for Polymarket and prediction markets, ingesting and querying billions of rows of on-chain trading data in real time. Designed the data architecture around ClickHouse for OLAP workloads and Kafka for event streaming.",
+    url: "https://insiders.bot",
+    github: null,
+    image: "/images/projects/insiders.png",
+    tags: ["Next.js", "FastAPI", "ClickHouse", "Kafka", "Python", "TypeScript"],
+    featured: true,
+    role: "Architecture Consultant",
+    metrics: [
+      { label: "Data Scale", value: "Billions of rows" },
+      { label: "Stack", value: "ClickHouse + Kafka" },
+      { label: "Domain", value: "Prediction Markets" },
+    ],
+  },
+  {
+    name: "Webinar.gg",
+    description:
+      "Professional webinar hosting platform for live streaming and virtual events at scale. Led engineering across the full stack, from the React frontend to the Express backend and ByteDance-powered streaming infrastructure.",
+    url: "https://webinar.gg",
+    github: null,
+    image: "/images/projects/webinar.png",
+    tags: ["React", "Express.js", "PostgreSQL", "ByteDance", "TypeScript"],
+    featured: true,
+    role: "Lead Engineer",
+    metrics: [
+      { label: "Product", value: "Live Streaming" },
+      { label: "Ownership", value: "End-to-End" },
+      { label: "Status", value: "Production" },
+    ],
+  },
+  {
     name: "FlyAirQ",
     description:
       "Airline and travel booking platform with end-to-end flight search, booking, and travel management. Full booking pipeline with real-time flight data integration.",
@@ -139,13 +171,8 @@ export const projects: Project[] = [
     github: null,
     image: "/images/projects/flyairq.png",
     tags: ["React", "Node.js", "TypeScript", "PostgreSQL"],
-    featured: true,
+    featured: false,
     role: "Full Stack Developer",
-    metrics: [
-      { label: "Pipeline", value: "End-to-End" },
-      { label: "Data", value: "Real-time" },
-      { label: "Status", value: "Production" },
-    ],
   },
   {
     name: "Petals KTM",
@@ -155,39 +182,6 @@ export const projects: Project[] = [
     github: null,
     image: "/images/projects/petalsktm.png",
     tags: ["Next.js", "Vercel", "E-commerce", "TypeScript"],
-    featured: false,
-    role: "Developer",
-  },
-  {
-    name: "Kinamna",
-    description:
-      "Production web platform with modern architecture, responsive design, and optimized performance.",
-    url: "https://kinamna.com",
-    github: null,
-    image: "/images/projects/kinamna.png",
-    tags: ["React", "TypeScript", "Tailwind CSS"],
-    featured: false,
-    role: "Developer",
-  },
-  {
-    name: "SajiloDev",
-    description:
-      "Tech service ordering platform for website creation, domain management, hosting, and maintenance services.",
-    url: "https://sajilodev.com",
-    github: "https://github.com/dipenbhat557/SajiloDev",
-    image: "/images/projects/sajilodev.png",
-    tags: ["React", "TypeScript", "Firebase", "Tailwind CSS"],
-    featured: false,
-    role: "Developer",
-  },
-  {
-    name: "Geoland Travels",
-    description:
-      "Travel booking platform with admin and user panels for inbound/outbound tours, ticketing, and pricing management.",
-    url: "https://geolandtravels.com",
-    github: "https://github.com/dipenbhat557/Geoland-Travels",
-    image: "/images/projects/geoland.png",
-    tags: ["React", "TypeScript", "Firebase", "Tailwind CSS"],
     featured: false,
     role: "Developer",
   },

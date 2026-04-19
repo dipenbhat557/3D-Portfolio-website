@@ -68,7 +68,7 @@ export default function Contact() {
           >
             <p className="text-muted text-lg leading-relaxed mb-8">
               Whether you have a project in mind, want to discuss AI
-              infrastructure, or just want to connect — I&apos;d love to hear
+              infrastructure, or just want to connect, I&apos;d love to hear
               from you.
             </p>
 

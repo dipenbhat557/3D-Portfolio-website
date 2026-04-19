@@ -82,7 +82,7 @@ export default function About() {
           viewport={{ once: true }}
           transition={{ duration: 0.5, delay: 0.1 }}
         >
-          I&apos;m Dipendra Bhatta — CTO and AI infrastructure engineer with a
+          I&apos;m Dipendra Bhatta, CTO and AI infrastructure engineer with a
           track record of building production systems that scale. As co-founder
           at AIPrep, I architect LLM orchestration pipelines, design
           cost-optimized cloud infrastructure on GKE, and lead engineering
