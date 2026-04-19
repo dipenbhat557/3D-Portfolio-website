@@ -87,7 +87,7 @@ export const experiences = [
     company: "SajiloDev",
     url: "https://sajilodev.com",
     logo: "/images/companies/sajilodev.jpg",
-    period: "November 2023 - June 2024",
+    period: "July 2023 - June 2024",
     points: [
       "Developed and deployed multiple production-ready projects including the official SajiloDev website",
       "Designed and implemented RESTful APIs using Spring Boot for backend services",
