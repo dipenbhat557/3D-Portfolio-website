@@ -150,17 +150,17 @@ export const projects: Project[] = [
   {
     name: "Webinar.gg",
     description:
-      "Professional webinar hosting platform for live streaming and virtual events at scale. Led engineering across the full stack, from the React frontend to the Express backend and ByteDance-powered streaming infrastructure.",
+      "Professional webinar hosting platform for live streaming and virtual events. Led the initial build, shipping the React frontend, Express backend, and ByteDance-powered streaming integration to bring the product close to launch.",
     url: "https://webinar.gg",
     github: null,
     image: "/images/projects/webinar.png",
     tags: ["React", "Express.js", "PostgreSQL", "ByteDance", "TypeScript"],
     featured: true,
-    role: "Lead Engineer",
+    role: "Lead Engineer · Initial Build",
     metrics: [
-      { label: "Product", value: "Live Streaming" },
-      { label: "Ownership", value: "End-to-End" },
-      { label: "Status", value: "Production" },
+      { label: "Phase", value: "Initial Build" },
+      { label: "Stack", value: "Full Stack" },
+      { label: "Status", value: "Launched" },
     ],
   },
   {
